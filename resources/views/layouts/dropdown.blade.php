@@ -49,11 +49,14 @@
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
-                    <form method="POST" action="#" role="none">
-                    <button type="submit" class="block w-full px-4 py-2 text-sm text-left text-gray-700" role="menuitem" tabindex="-1" id="menu-item-3">
-                        Sign out
-                    </button>
+                    <a href="{{ route('logout') }}"
+                           class="no-underline hover:underline"
+                           onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        {{ csrf_field() }}
                     </form>
+
                 </div>
             </div>
 
