@@ -20,3 +20,4 @@ Route::resource('courses', CourseController::class);
 Route::resource('course-details', CourseDetailController::class);
 
 
+

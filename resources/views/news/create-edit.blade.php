@@ -4,7 +4,7 @@
 
 
 
-    <form class="relative px-8 pb-8 space-y-8 bg-green-200 divide-y divide-yellow-500" action="{{ url('/news') }}" method="POST">
+    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('/news') }}" method="POST">
         @csrf
         <div class="space-y-8 divide-y divide-yellow-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
