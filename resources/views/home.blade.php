@@ -2,7 +2,7 @@
 
 @section('content')
 
-<main class="relative z-0 flex-1 pb-8 overflow-y-auto">
+<main class="">
     <!-- Page header -->
     <div class="bg-white shadow">
       <div class="px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
@@ -39,14 +39,14 @@
               </div>
             </div>
           </div>
-          <div class="flex mt-6 space-x-3 md:mt-0 md:ml-4">
-            {{-- <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+          {{-- <div class="flex mt-6 space-x-3 md:mt-0 md:ml-4">
+            <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
               Add money
-            </button> --}}
+            </button>
             <button type="button" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-yellow-500 border border-transparent rounded-md shadow-sm hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
               Edit Profile
             </button>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
