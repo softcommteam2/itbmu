@@ -3,93 +3,105 @@
 @section('content')
 
 
-
     <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('/news') }}" method="POST">
         @csrf
-        <div class="space-y-8 divide-y divide-yellow-500 sm:space-y-5">
+        <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
-                <h3 class="text-lg font-medium leading-6 text-gray-900">
-                    News
-                </h3>
+                <h2 class="text-xl font-bold leading-8 text-gray-900">
+                   <u> News & Events Entry Form </u>
+                </h2>
 
                 </div>
-                <div class="space-y-6 sm:space-y-5">
-                <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    Title of the Article
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                <div class="space-y-6 sm:space-y-5 border p-3">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Title 
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="text" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div>
-
-                {{-- <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="last_name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    Last name
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="last_name" id="last_name" autocomplete="family-name" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        News
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="text" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div>
-
-                <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    Email address
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Upcome Date
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="date" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div>
-
-                <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="country" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    Country / Region
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <select id="country" name="country" autocomplete="country" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>Mexico</option>
-                    </select>
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Photo1
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="file" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div>
-
-                <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="street_address" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    Street address
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="street_address" id="street_address" autocomplete="street-address" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Photo 2
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="file" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div>
-
-                <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="city" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    City
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="city" id="city" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Photo 3
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="file" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div>
-
-                <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="state" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    State / Province
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="state" id="state" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Photo 4
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="file" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div>
-
-                <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-yellow-200 sm:pt-5">
-                    <label for="zip" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                    ZIP / Postal
-                    </label>
-                    <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="zip" id="zip" autocomplete="postal-code" class="block w-full max-w-lg border-yellow-100 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Photo 5
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="file" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg border-blue-500 rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">
+                        </div>
                     </div>
-                </div> --}}
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            Photo 5
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                          <div class="max-w-lg flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                            <div class="space-y-1 text-center">
+                              <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                              <div class="flex text-sm text-gray-600">
+                                <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                  <span>Upload a file</span>
+                                  <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                </label>
+                                <p class="pl-1">or drag and drop</p>
+                              </div>
+                              <p class="text-xs text-gray-500">
+                                PNG, JPG, GIF up to 10MB
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
