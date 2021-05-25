@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Lecture extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name', 'subject_id'
+    ];
+    public function subjects()
+    {
+        return $this->hasMany('App\Models\Subject');
+    }
 }
