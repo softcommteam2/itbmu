@@ -10,9 +10,9 @@ Route::get('/', function () {
 Auth::routes();
 
 // Route::get('/home', [HomeController::class, 'index']);
-Route::resource('/news', NewsController::class);
-Route::resource('courses', CourseController::class);
-Route::resource('course-details', CourseDetailController::class);
+// Route::resource('/news', NewsController::class);
+// Route::resource('courses', CourseController::class);
+// Route::resource('course-details', CourseDetailController::class);
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::get('/', [HomeController::class, 'index']);
