@@ -8,7 +8,7 @@
   <div class="mt-8">
     <div>
         <h2 class="m-8 text-xl font-bold leading-8 text-gray-900">
-           <u> News & Events List </u> <a href="{{ url('admin/lectures/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add New</a>
+           <u> Lecture List </u> <a href="{{ url('admin/lectures/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add New</a>
         </h2>
 
     </div>
