@@ -8,7 +8,7 @@
   <div class="mt-8">
     <div>
         <h2 class="m-8 text-xl font-bold leading-8 text-gray-900">
-           <u> Lecture List </u> <a href="{{ url('admin/lectures/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add New</a>
+           <u> Multimedia List </u> <a href="{{ url('admin/multimedia/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add new</a>
         </h2>
 
     </div>
@@ -62,21 +62,17 @@
                   <thead>
                   <tr>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                      Lecid
+                      Title
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                      Lecture Name
+                      Presenter name
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                        Lecture Email
+                     File type
                       </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                        Address
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
+                      File
                       </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                        Phone
-                      </th>
-
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Actions
                       </th>
@@ -84,31 +80,26 @@
                   </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                      @foreach ($lectures as $lecture)
+                      @foreach ($medias as $media)
                         <tr class="bg-white">
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                            <span class="font-medium text-gray-900">{{ $lecture->id }} </span>
+                            <span class="font-medium text-gray-900">{{ $media->title }} </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <span class="font-medium text-gray-900">{{ $media->presentername }} </span>
                             </td>
 
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                            <span class="font-medium text-gray-900">{{ $lecture->name }} </span>
-                            </td>
+                                <span class="font-medium text-gray-900">{{ $media->filetype }} </span>
 
-                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $lecture->email }} </span>
                             </td>
-
-                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $lecture->address }} </span>
-                            </td>
-
-                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $lecture->phone }} </span>
+                            <td class="px-6 py-4 text-sm text-left text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('multimedia/images/'.$media->file)}}" class="w-16 h-16 rounded-md">
                             </td>
 
 
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <a href="{{ url('admin/lectures/'.$lecture->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
+                                <a href="{{ url('admin/multimedia/'.$media->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
                                     Edit
                                 </a>
                             </td>

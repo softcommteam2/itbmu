@@ -62,12 +62,14 @@
                   <thead>
                   <tr>
                       <th class="p-3 px-6 text-xs font-medium tracking-wider text-center text-gray-500 upppercase bg-gray-50">
-                          No
+                          NO
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Name
                       </th>
-
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
+                        Language
+                      </th>
 
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Actions
@@ -79,11 +81,13 @@
                       @foreach ($subjects as $subject)
                         <tr class="bg-white">
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                {{ $subject->id }}
+                                <span class="font-medium text-gray-900">{{ $subject->id }} </span>
                             </td>
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
                             <span class="font-medium text-gray-900">{{ $subject->name }} </span>
                             </td>
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <span class="font-medium text-gray-900">{{ $subject->language }} </span>
                             </td>
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
                                 <a href="{{ url('admin/subjects/'.$subject->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">

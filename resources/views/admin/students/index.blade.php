@@ -8,7 +8,7 @@
   <div class="mt-8">
     <div>
         <h2 class="m-8 text-xl font-bold leading-8 text-gray-900">
-           <u> Lecture List </u> <a href="{{ url('admin/lectures/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add New</a>
+           <u> Student List </u> <a href="{{ url('admin/students/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add New</a>
         </h2>
 
     </div>
@@ -61,20 +61,17 @@
               <table class="min-w-full divide-y divide-gray-200">
                   <thead>
                   <tr>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                      Lecid
+                      <th class="p-3 px-6 text-xs font-medium tracking-wider text-center text-gray-500 upppercase bg-gray-50">
+                          NO
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                      Lecture Name
+                      Name
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                        Lecture Email
+                        Country
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                        Address
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                        Phone
+                        Class
                       </th>
 
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
@@ -84,31 +81,22 @@
                   </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                      @foreach ($lectures as $lecture)
+                      @foreach ($students as $student)
                         <tr class="bg-white">
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                            <span class="font-medium text-gray-900">{{ $lecture->id }} </span>
+                                <span class="font-medium text-gray-900">{{ $student->id }} </span>
                             </td>
-
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                            <span class="font-medium text-gray-900">{{ $lecture->name }} </span>
+                            <span class="font-medium text-gray-900">{{ $student->name }} </span>
                             </td>
-
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $lecture->email }} </span>
+                                <span class="font-medium text-gray-900">{{ $student->country }} </span>
                             </td>
-
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $lecture->address }} </span>
+                                <span class="font-medium text-gray-900">{{ $student->class }} </span>
                             </td>
-
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $lecture->phone }} </span>
-                            </td>
-
-
-                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <a href="{{ url('admin/lectures/'.$lecture->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
+                                <a href="{{ url('admin/students/'.$student->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
                                     Edit
                                 </a>
                             </td>

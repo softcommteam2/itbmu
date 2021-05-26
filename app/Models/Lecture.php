@@ -10,7 +10,7 @@ class Lecture extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'subject_id'
+        'name', 'email', 'address', 'phone'
     ];
     public function subjects()
     {

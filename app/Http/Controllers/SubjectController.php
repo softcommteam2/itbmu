@@ -25,7 +25,8 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
        $request->validate([
-           'name' => 'required'
+           'name' => 'required',
+           'language' => 'required'
        ]);
         Subject::create($request->all());
        return redirect('admin/subjects');

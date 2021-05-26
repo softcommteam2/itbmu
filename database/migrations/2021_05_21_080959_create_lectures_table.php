@@ -16,7 +16,9 @@ class CreateLecturesTable extends Migration
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('subject_id');
+            $table->string('email');
+            $table->string('address');
+            $table->integer('phone');
             $table->timestamps();
         });
     }
