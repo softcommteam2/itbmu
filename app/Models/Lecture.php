@@ -14,6 +14,6 @@ class Lecture extends Model
     ];
     public function subjects()
     {
-        return $this->hasMany('App\Models\Subject');
+        return $this->belongsTo('App\Models\Subject', 'subject_id')->withDefault();
     }
 }

@@ -2,25 +2,25 @@
 
 @section('content')
 
-@if(empty($lecture->id))
-    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/lectures') }}" method="POST" enctype="multipart/form-data">
+@if(empty($subject->id))
+    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/subjects') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
 
                         <h2 class="text-xl font-bold leading-8 text-gray-900">
-                        <u> Lecture Entry Form </u>
+                        <u> Subject Entry Form </u>
                         </h2>
                     @else
-    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/lectures/'.$lecture->id) }}" method="POST" enctype="multipart/form-data">
+    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/subjects/'.$subject->id) }}" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
                         <h2 class="text-xl font-bold leading-8 text-gray-900">
-                            <u> Lecture Update Form </u>
+                            <u> Subject Update Form </u>
                         </h2>
                     @endif
                 </div>
@@ -30,18 +30,10 @@
                         Name
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('name') ?? $lecture->name}}">
+                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('name') ?? $subject->name}}">
                         </div>
                     </div>
-                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="subject_id" class="block text-sm font-medium text-gray-700">Subject</label>
-                        <select id="subject_id" name="subject_id" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                          <option >Choose Subject</option>
-                         @foreach ($subjects as $subject)
-                            <option value="{{ $subject->id }}" >{{ $subject->name }}</option>
-                         @endforeach
-                        </select>
-                    </div>
+
                 </div>
             </div>
         </div>
