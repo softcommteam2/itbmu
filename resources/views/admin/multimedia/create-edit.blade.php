@@ -25,6 +25,14 @@
                     @endif
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
+                    <div class="sm:grid sm:grid-cols-6 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                        <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                          Email address
+                        </label>
+                        <div class="w-full mt-1 sm:mt-0 sm:col-span-5">
+                          <input id="email" name="email" type="email" autocomplete="email" class="block w-full max-w-lg text-left border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                      </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
                         <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                         Title
