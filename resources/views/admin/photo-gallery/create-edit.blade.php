@@ -2,58 +2,42 @@
 
 @section('content')
 
-@if(empty($media->id))
-    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/multimedia') }}" method="POST" enctype="multipart/form-data">
+@if(empty($gallery->id))
+    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/galleries') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
 
                         <h2 class="text-xl font-bold leading-8 text-gray-900">
-                        <u> Multimedia Entry Form </u>
+                        <u> Photo Gallery Entry Form </u>
                         </h2>
                     @else
-    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/multimedia/'.$media->id) }}" method="POST" enctype="multipart/form-data">
+    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/galleries/'.$gallery->id) }}" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
                         <h2 class="text-xl font-bold leading-8 text-gray-900">
-                            <u> Multimedia Update Form </u>
+                            <u> Photo Gallery Update Form </u>
                         </h2>
                     @endif
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
-                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"  >
-                         Title
-                        </label>
-                        <div class="mt-1 sm:mt-0 sm:col-span-2">
-                          <input type="text" name="title" id="title" autocomplete="street-address" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('title') ?? $media->title}}">
-                        </div>
-                    </div>
-                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="presentername" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                          Presenter Name
-                        </label>
-                        <div class="mt-1 sm:mt-0 sm:col-span-2">
-                          <input type="text" name="presentername" id="presentername" autocomplete="street-address" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('presentername') ?? $media->presentername}}">
-                        </div>
-                    </div>
 
-                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="filetype" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                          File type
-                        </label>
-                        <div class="mt-1 sm:mt-0 sm:col-span-2">
-                          <input type="text" name="filetype" id="filetype" autocomplete="filetype" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('filetype') ?? $media->filetype}}">
-                        </div>
+                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="titleid" class="block text-sm font-medium text-gray-700">Title</label>
+                        <select id="titleid" name="titleid" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                          <option >Choose Title</option>
+                         @foreach ($act_titles as $act_title)
+                            <option value="{{ $act_title->id }}">{{ $act_title->title }}</option>
+                         @endforeach
+                        </select>
                     </div>
-
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="file" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-                            File
+                        <label for="photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            Photo
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                           <div class="flex justify-center max-w-lg px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -62,9 +46,9 @@
                                 <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                               </svg>
                               <div class="flex text-sm text-gray-600">
-                                <label for="file" class="relative font-medium text-indigo-600 bg-white rounded-md cursor-pointer hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                <label for="photo" class="relative font-medium text-indigo-600 bg-white rounded-md cursor-pointer hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                   <span>Upload a file</span>
-                                  <input id="file" name="file" type="file" class="sr-only">
+                                  <input id="photo" name="photo" type="file" class="sr-only">
                                 </label>
                                 <p class="pl-1">or drag and drop</p>
                               </div>
@@ -75,6 +59,15 @@
                           </div>
                         </div>
                     </div>
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="label" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        Label
+                        </label>
+                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="text" name="label" id="label" autocomplete="given-label" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('label') ?? $gallery->label}}">
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

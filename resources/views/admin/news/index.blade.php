@@ -105,20 +105,20 @@
                             <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                             <time datetime="2020-07-11">{{ $new->upcomedate }}</time>
                             </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo1)}}" class="w-16 h-16 rounded-md">
+                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('news/images/'.$new->photo1)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo2)}}" class="w-16 h-16 rounded-md">
+                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('news/images/'.$new->photo2)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo3)}}" class="w-16 h-16 rounded-md">
+                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('news/images/'.$new->photo3)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo4)}}" class="w-16 h-16 rounded-md">
+                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('news/images/'.$new->photo4)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo5)}}" class="w-16 h-16 rounded-md">
+                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('news/images/'.$new->photo5)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
                             <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                                 <a href="{{ url('admin/news/'.$new->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">

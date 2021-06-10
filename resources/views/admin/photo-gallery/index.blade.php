@@ -8,11 +8,10 @@
   <div class="mt-8">
     <div>
         <h2 class="m-8 text-xl font-bold leading-8 text-gray-900">
-           <u> Multimedia List </u> <a href="{{ url('admin/multimedia/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add new</a>
+           <u> Multimedia List </u> <a href="{{ url('admin/galleries/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add new</a>
         </h2>
 
     </div>
-
 
       <!-- Activity table (small breakpoint and up) -->
       <div class="hidden sm:block">
@@ -21,46 +20,37 @@
               <div class="min-w-full overflow-hidden overflow-x-auto align-middle shadow sm:rounded-lg">
               <table class="min-w-full divide-y divide-gray-200">
                   <thead>
-                  <tr>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                      Title
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                      Presenter name
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                     File type
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
-                      File
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
-                      Actions
-                      </th>
+                    <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
+                        Title Id
+                        </th>
+                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
+                        Photo
+                        </th>
+                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
+                       Lable
+                        </th>
 
-                  </tr>
+                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
+                        Actions
+                        </th>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                      @foreach ($medias as $media)
+                      @foreach ($galleries as $gallery)
                         <tr class="bg-white">
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                            <span class="font-medium text-gray-900">{{ $media->title }} </span>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $media->presentername }} </span>
+                            <span class="font-medium text-gray-900">{{ $gallery->activity->id }} </span>
                             </td>
 
-                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $media->filetype }} </span>
-
+                            <td class="justify-center px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('gallery/images/'.$gallery->photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
-                            <td class="px-6 py-4 text-sm text-left text-gray-500 whitespace-nowrap">
-                                <a href="{{ url('admin/multimedia/'.$media->id) }}" ><span class="font-medium text-gray-900">{{ $media->file }} </span></a>
-                            </td>
-
 
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <a href="{{ url('admin/multimedia/'.$media->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
+                                <span class="font-medium text-gray-900">{{ $gallery->label }} </span>
+                            </td>
+
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <a href="{{ url('admin/galleries/'.$gallery->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
                                     Edit
                                 </a>
                             </td>

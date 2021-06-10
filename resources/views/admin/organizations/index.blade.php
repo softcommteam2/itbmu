@@ -61,23 +61,23 @@
               <table class="min-w-full divide-y divide-gray-200">
                   <thead>
                   <tr>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase bg-gray-50">
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Name
                       </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Photo
                       </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                      Biography
                       </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Status
                       </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Rank
                       </th>
 
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
+                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Actions
                       </th>
 
@@ -86,26 +86,26 @@
                   <tbody class="bg-white divide-y divide-gray-200">
                       @foreach ($organizations as $organization)
                         <tr class="bg-white">
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                            <span class="font-medium text-gray-900">{{ $organization->name }} </span>
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                            <span class="font-medium text-center text-gray-900">{{ $organization->name }} </span>
                             </td>
                             </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('organizations/images/'.$organization->photo)}}" class="w-16 h-16 rounded-md">
-                            </td>
-
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $organization->biography }} </span>
-
-                            </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $organization->status }} </span>
-                            </td>
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <span class="font-medium text-gray-900">{{ $organization->rank }} </span>
+                            <td class="justify-center px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <img src="{{ $organization->photoUrl() }}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
 
-                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <span class="font-medium text-center text-gray-900">{{ $organization->biography }} </span>
+
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <span class="font-medium text-center text-gray-900">{{ $organization->status }} </span>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
+                                <span class="font-medium text-center text-gray-900">{{ $organization->rank }} </span>
+                            </td>
+
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
                                 <a href="{{ url('admin/organizations/'.$organization->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
                                     Edit
                                 </a>
