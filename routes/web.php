@@ -8,11 +8,17 @@ use App\Http\Controllers\Front\{AboutController};
 
 Auth::routes();
 Route::resource('course-details', CourseDetailController::class);
+Route::get('/home', function(){
+    return view('front.layout.home');
+});
 Route::get('/', function(){
-    return view('welcome');
-})->name('landing');
+    return view('front.layout.home');
+});
 Route::get('/orgs',[AboutController::class, 'organization'])->name('organization');
-
+Route::get('/events',[AboutController::class, 'news'])->name('new');
+Route::get('/event-detail',function(){
+    return view('front.news-detail');})->name('new-details');
+Route::get('/photo-gallery',[AboutController::class, 'gallery'])->name('photo-gallery');
 
 
 //-----------------------Admin--------------------------------------------//
