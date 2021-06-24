@@ -16,7 +16,8 @@ class CourseController extends Controller
 
     public function create()
     {
-        return view('course.create-edit');
+        $course = new Course();
+        return view('course.create-edit', compact('course'));
     }
 
     public function store(Request $request)

@@ -7,7 +7,7 @@ use App\Http\Controllers\Front\{AboutController};
 
 
 Auth::routes();
-Route::resource('course-details', CourseDetailController::class);
+// Route::resource('course-details', CourseDetailController::class);
 Route::get('/home', function(){
     return view('front.layout.home');
 });

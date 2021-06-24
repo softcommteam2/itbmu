@@ -27,16 +27,16 @@
                 <div class="p-3 space-y-6 border sm:space-y-5">
 
                      <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="titleid" class="block text-sm font-medium text-gray-700">Title</label>
-                        <select id="titleid" name="titleid" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                          <option >Choose Title</option>
+                        <label for="titleid" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">Title</label>
+                        <select style="width:520px" id="titleid" name="titleid" class="block w-full max-w-lg py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                          <option>Choose Title</option>
                          @foreach ($act_titles as $act_title)
                             <option value="{{ $act_title->id }}">{{ $act_title->title }}</option>
                          @endforeach
                         </select>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8 sm:mt-px sm:pt-2">
                             Photo
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -60,11 +60,11 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="label" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="label" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8 sm:mt-px sm:pt-2">
                         Label
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="label" id="label" autocomplete="given-label" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('label') ?? $gallery->label}}">
+                        <input type="text" name="label" id="label" autocomplete="given-label" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{old('label') ?? $gallery->label}}">
                         </div>
                     </div>
 

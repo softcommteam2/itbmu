@@ -1,24 +1,41 @@
 @extends('front.layout.base')
 @section('content')
 <div class="wrapper row3">
+  <style>
+    .gallery{
+      margin:5px;!important
+      margin-bottom: 30px;
+    }
+    #gallery-div{
+      height: 250px; overflow:hidden;
+      border: solid #808080	 1px;
+    }
+    .gallery-img{
+      width: 250px;
+      
+    }
+  </style>
     <main class="hoc container clear"> 
       <!-- main body -->
       <!-- ################################################################################################ -->
       <div class="content"> 
         <!-- ################################################################################################ -->
-        <div id="gallery">
-            
-            @foreach($galleries as $gallery)
-                <figure>
-                    <h1 class="heading" align="center">{{ $gallery::activity_type($gallery->title_id) }}</h1>
-                    <ul class="nospace clear">
-                    <li class="one_quarter"><a href="#"><img src="{{asset('gallery/images/'.$gallery->photo)}}" alt=""></a></li>
-                   
-                    
-                    </ul>
-                    <figcaption>Gallery Description Goes Here</figcaption>
-                </figure>
-          @endforeach
+        <div id="gallery">             
+          <figure>
+            <h1 class="heading" align="center">ITBMU Photo Gallery</h1>
+              @foreach($galleries as $titleid=>$photolist)
+                <ul class="nospace clear">
+                  @foreach ($photolist as $gallery)
+                    <li class="one_quarter gallery">
+                      <div id="gallery-div">
+                        <img class="gallery-img" src="{{asset('gallery/images/'.$gallery->photo)}}" alt="" >
+                      </div></li>
+                  @endforeach
+                  
+                </ul>
+              @endforeach
+              {{-- <figcaption>Gallery Description Goes Here</figcaption> --}}
+          </figure>
         </div>
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
@@ -40,6 +57,7 @@
         </nav>
         <!-- ################################################################################################ -->
       </div>
+            <!-- Tabs -->
       <!-- ################################################################################################ -->
       <!-- / main body -->
       <div class="clear"></div>

@@ -26,31 +26,31 @@
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Title
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('title') ?? $new->title}}">
+                        <input type="text" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{old('title') ?? $new->title}}">
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="news" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="news" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         News
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="news" id="news" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{ old('news')?? $new->news }}">
+                        <input type="text" name="news" id="news" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{ old('news')?? $new->news }}">
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="upcomedate" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="upcomedate" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Upcome Date
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="date" name="upcomedate" id="upcomedate" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value={{ old('upcomedate')?? $new->upcomedate }}>
+                        <input type="date" name="upcomedate" id="upcomedate" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value={{ old('upcomedate')?? $new->upcomedate }}>
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="photo1" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="photo1" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                             Photo 1
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="photo2" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="photo2" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                             Photo 2
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="photo3" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="photo3" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                             Photo 3
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="photo4" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="photo4" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                             Photo 4
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="photo5" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="photo5" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                             Photo 5
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">

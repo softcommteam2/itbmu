@@ -129,7 +129,7 @@ Licence URI: https://www.os-templates.com/template-terms
         </ul>
       </li>
 
-      <li><a href="pages/uniactivi.html">University Activities</a></li>
+      <li><a href="{{route('photo-gallery')}}">University Activities</a></li>
       <li><a href="pages/faq.html">FAQ</a></li>
     </ul>
     <!-- ################################################################################################ -->

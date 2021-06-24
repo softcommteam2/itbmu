@@ -26,23 +26,23 @@
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Name
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('name') ?? $organization->name}}">
+                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{old('name') ?? $organization->name}}">
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="biography" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="biography" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Biography
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="biography" id="biography" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{ old('biography')?? $organization->biography }}">
+                        <input type="text" name="biography" id="biography" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{ old('biography')?? $organization->biography }}">
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="status" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="status" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Status
                         </label>
                         <div class="relative flex items-start">
@@ -61,9 +61,9 @@
                         </select> --}}
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="rank" class="block text-sm font-medium text-gray-700">rank</label>
-                        <select id="rank" name="rank" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                          <option >Choose Position</option>
+                        <label for="rank" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">Rank</label>
+                        <select style="width:510px;" id="rank" name="rank" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                          <option>Choose Position</option>
                           <option value="dean">Dean</option>
                           <option value="prorector">Pro-Rector</option>
                           <option value="professor">Professor</option>
@@ -71,7 +71,7 @@
                         </select>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                             Photo 1
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">

@@ -26,27 +26,27 @@
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Name
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('name') ?? $student->name}}">
+                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{old('name') ?? $student->name}}">
                         </div>
                     </div>
                      <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                        <select id="country" name="country" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <label for="country" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">Country</label>
+                        <select style="width: 510px;" id="country" name="country" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                           <option >Choose Country</option>
                           <option value="USA">USA</option>
                           <option value="M">Myanmar</option>
                         </select>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="class" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="class" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Class
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="class" id="class" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('class') ?? $student->class}}">
+                        <input type="text" name="class" id="class" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{old('class') ?? $student->class}}">
                         </div>
                     </div>
 

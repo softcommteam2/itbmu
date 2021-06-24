@@ -17,9 +17,9 @@ class Gallery extends Model
         return $this->belongsTo('App\Models\ActivityTitle','titleid')->withDefault();
     }
 
-    public static function activity_type($title_id)
+    public static function get_photo_by_type()
     {
-        return static::where('titleid',$title_id)->get();
+       
     }
 
 }

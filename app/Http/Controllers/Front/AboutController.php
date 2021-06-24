@@ -24,7 +24,11 @@ class AboutController extends Controller
 
     public function gallery()
     {
-        $galleries = Gallery::all();
+        // $galleries = Gallery::get()->groupBy('titleid');
+        $galleries = Gallery::orderBy('created_at')->get()->groupBy(function($data) {
+            return $data->titleid;
+        });
+    
         return view('front.photo-gallery', compact('galleries'));
     }
 }

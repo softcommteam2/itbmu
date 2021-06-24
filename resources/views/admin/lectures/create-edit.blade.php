@@ -26,36 +26,36 @@
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Name
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('name') ?? $lecture->name}}">
+                            <input type="text" name="name" id="name" autocomplete="street-address" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('name') ?? $lecture->name}}">
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Email
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="email" name="email" id="email" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('email') ?? $lecture->email}}">
+                            <input type="text" name="email" id="email" autocomplete="street-address" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('email') ?? $lecture->email}}">
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="address" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="address" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Address
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <textarea name="address" id="address" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm">{{ $lecture->address }}</textarea>
-                        {{-- <input type="text" name="address" id="address" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('address') ?? $lecture->address}}"> --}}
+                        <textarea name="address" id="address" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm">{{ $lecture->address }}</textarea>
+                       
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="phone" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Phone
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="tel"  name="phone" id="phone" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:max-w-xs sm:text-sm" value="{{old('phone') ?? $lecture->phone}}">
+                        <input type="tel"  name="phone" id="phone" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{old('phone') ?? $lecture->phone}}">
                         </div>
                     </div>
 
