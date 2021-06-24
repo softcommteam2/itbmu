@@ -3,7 +3,7 @@
 @section('content')
 
 @if(empty($course->id))
-    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/course') }}" method="POST" enctype="multipart/form-data">
+    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/courses') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
@@ -13,7 +13,7 @@
                         <u> Course Entry Form </u>
                         </h2>
                     @else
-    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/course/'.$course->id) }}" method="POST" enctype="multipart/form-data">
+    <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/courses/'.$course->id) }}" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
@@ -38,7 +38,7 @@
                           Open Date
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                          <input type="text" name="open_date" id="open_date" autocomplete="street-address" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('open_date') ?? $course->open_date}}">
+                          <input type="date" name="open_date" id="open_date" autocomplete="street-address" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('open_date') ?? $course->open_date}}">
                         </div>
                     </div>
 

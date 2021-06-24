@@ -19,6 +19,10 @@ Route::get('/events',[AboutController::class, 'news'])->name('new');
 Route::get('/event-detail',function(){
     return view('front.news-detail');})->name('new-details');
 Route::get('/photo-gallery',[AboutController::class, 'gallery'])->name('photo-gallery');
+Route::get('/course-year',[AboutController::class, 'course_year'])->name('courses');
+Route::get('/audios',[AboutController::class, 'mediamp3'])->name('mediamp3');
+Route::get('/videos',[AboutController::class, 'mediamp4'])->name('mediamp4');
+
 
 
 //-----------------------Admin--------------------------------------------//

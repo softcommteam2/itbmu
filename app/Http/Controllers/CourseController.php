@@ -40,12 +40,14 @@ class CourseController extends Controller
 
     public function edit($id)
     {
-        //
+        $course = Course::findOrFail($id);
+        return view('course.create-edit',compact('course'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $course = Course::findOrFail($id)->update($request->all());
+        return redirect('/admin/courses');
     }
 
     public function destroy($id)

@@ -33,7 +33,7 @@
                         <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{old('name') ?? $student->name}}">
                         </div>
                     </div>
-                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
                         <label for="country" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">Country</label>
                         <select style="width: 510px;" id="country" name="country" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                           <option >Choose Country</option>

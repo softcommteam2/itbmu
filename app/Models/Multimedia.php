@@ -11,4 +11,14 @@ class Multimedia extends Model
     protected $fillable =[
         'title', 'presentername', 'filetype', 'file'
     ];
+
+    public static function mp3()
+    {
+        return Multimedia::where('filetype','3')->get();
+    }
+
+    public static function mp4()
+    {
+        return Multimedia::where('filetype','4')->get();
+    }
 }

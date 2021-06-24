@@ -18,7 +18,8 @@ class CourseDetailController extends Controller
     public function create()
     {
         $courses = Course::all();
-        return view('course-detail.create-edit', compact('courses'));
+        $course_detail = new CourseDetail();
+        return view('course-detail.create-edit', compact('courses','course_detail'));
     }
 
 

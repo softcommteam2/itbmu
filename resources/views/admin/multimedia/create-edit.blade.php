@@ -42,13 +42,13 @@
                         </div>
                     </div>
 
-                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="filetype" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                          File type
-                        </label>
-                        <div class="mt-1 sm:mt-0 sm:col-span-2">
-                          <input type="text" name="filetype" id="filetype" autocomplete="filetype" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{old('filetype') ?? $media->filetype}}">
-                        </div>
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                      <label for="filetype" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">File Type</label>
+                      <select style="width: 510px;" id="filetype" name="filetype" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option >Choose file type</option>
+                        <option value="3">mp3</option>
+                        <option value="4">mp4</option>
+                      </select>
                     </div>
 
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
@@ -80,14 +80,14 @@
         </div>
 
         <div class="pt-5">
-            <div class="flex justify-end">
-                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-yellow-400 border border-yellow-100 rounded-md shadow-sm hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
-                Cancel
-                </button>
-                <button type="submit" class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
-                Save
-                </button>
-            </div>
+          <div class="flex justify-end">
+              <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-yellow-400 border border-yellow-100 rounded-md shadow-sm hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
+              Cancel
+              </button>
+              <button type="submit" class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-green-600 border border-transparent rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
+              Save
+              </button>
+          </div>
         </div>
     </form>
 
