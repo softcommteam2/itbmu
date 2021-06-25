@@ -13,7 +13,7 @@
           <tbody>
             @foreach ($news as $new)
               <tr style="border: 0px solid;background-color: #fff;">
-                <td rowspan="3" width="160px" ><img src="../images/01.png" style="width:150px; height:150px;background-color: #fff;"></td>
+                <td rowspan="3" width="160px" ><img src="{{asset('news/images/'.$new->photo1)}}" style="width:150px; height:150px;background-color: #fff;"></td>
                 <td colspan="3" style="border: 0px solid;background-color: #fff;"><strong>{{ $new->title }}</strong></td>
               </tr>
               <tr style="border: 0px solid;background-color: #fff;">
@@ -23,7 +23,7 @@
               </tr>
               <tr style="border: 0px solid;background-color: #fff;">
               
-                <td colspan="3" style="border: 0px solid;background-color: #fff;" align="right"> <p class="nospace"><a href="{{ route('new-details') }}">Read More &raquo;</a></p></td>
+                <td colspan="3" style="border: 0px solid;background-color: #fff;" align="right"> <p class="nospace"><a href="{{ url('event-detail/'.$new->id) }}">Read More &raquo;</a></p></td>
               </tr>
             @endforeach
             
@@ -49,3 +49,8 @@
   </main>
 </div>
 @endsection
+
+{{-- @extends('front.layout.base')
+@section('content')
+    
+@endsection --}}

@@ -23,16 +23,18 @@ class NewsController extends Controller
     {
         $request->validate([
 
-           'title' => 'required',
-           'news'  => 'required',
+           'newstitlemyan' => 'required',
+           'newsmyan'  => 'required',
            'photo1'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:20480'
 
         ]);
 
 
         $new =new News();
-        $new->title = $request->title;
-        $new->news = $request->news;
+        $new->newstitlemyan = $request->newstitlemyan;
+        $new->newstitleeng = $request->newstitleeng;
+        $new->newsmyan = $request->newsmyan;
+        $new->newseng = $request->newseng;
         $new->upcomedate = $request->upcomedate;
         $new->photo1 =time().'.'.$request->photo1->extension();
         $request->photo1->move(public_path('news/images'), $new->photo1);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Multimedia;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 class MultimediaController extends Controller
@@ -24,16 +25,16 @@ class MultimediaController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required'
+        $data=$request->validate([
+            'title' => 'required',
+            'presentername' => 'nullable',
+            'filetype' => 'required',
+            'file' =>'required|mimetypes:video/avi,video/mpeg,video/mp4'
         ]);
-        $media= new Multimedia();
-        $media->title = $request->title;
-        $media->presentername = $request->presentername;
-        $media->filetype = $request->filetype;
-        $media->file =time().'.'.$request->file->extension();
-        $request->file->move(public_path('/multimedia/images'), $media->file);
-        $media->save();
+        $file_name =time().'.'.$request->file->getClientOriginalName();
+        $request->file->storeAs('multimedia',$file_name);
+        $data['file']=$file_name;
+        Multimedia::create($data);
         return redirect('admin/multimedia');
     }
 
@@ -51,25 +52,22 @@ class MultimediaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $data=$request->validate([
+            'title' => 'required',
+            'presentername' => 'nullable',
+            'filetype' => 'required',
+            'file' =>'nullable|mimetypes:video/avi,video/mpeg,video/mp4,video/mkv'
+        ]);
+       
         $media = Multimedia::findOrFail($id);
-        if($request->file != ''){
-            $path = public_path().'/multimedia/images/';
-
-            //code for remove old file
-            if($media->file != ''  && $media->file != null){
-                 $file_old = $path.$media->file;
-                 unlink($file_old);
+        if($request->hasFile('file')){
+            File::delete($media->file);
+            $file_name =time().'.'.$request->file->getClientOriginalName();
+            $request->file->storeAs('multimedia',$file_name);
+            $data['file']=$file_name;
             }
-
-            //upload new file
-            $file = $request->file;
-            $filename = $file->getClientOriginalName();
-            $file->move($path, $filename);
-
-            //for update in table
-            $media->update(['file' => $filename]);
+            $media->update($data);
         return redirect('admin/multimedia');
-    }
 
     }
     public function destroy($id)

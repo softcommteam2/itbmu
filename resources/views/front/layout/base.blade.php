@@ -12,13 +12,27 @@ Licence URI: https://www.os-templates.com/template-terms
 <title>itbmu</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href="layout/styles/custom.flexslider.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ asset('layout/styles/layout.css') }}" rel="stylesheet" type="text/css" media="all">
+<link href="{{ asset('layout/styles/custom.flexslider.css') }}" rel="stylesheet" type="text/css" media="all">
 <script src="https://kit.fontawesome.com/08bf8f3019.js" crossorigin="anonymous"></script>
 
 <!-- Start WOWSlider.com HEAD section -->
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
 <script type="text/javascript" src="engine1/jquery.js"></script>
+<style>
+  .gallery{
+    margin:5px;!important
+    margin-bottom: 30px;
+  }
+  #gallery-div{
+    height: 250px; overflow:hidden;
+    border: solid #808080	 1px;
+  }
+  .gallery-img{
+    width: 250px;
+    
+  }
+</style>
 <!-- End WOWSlider.com HEAD section -->
 </head>
 <body id="top">
@@ -69,12 +83,13 @@ Licence URI: https://www.os-templates.com/template-terms
         <ul>
             <li><a href="pages/setup.html">Set-up</a></li>
             <li><a href="pages/faculities.html">Faculities</a></li>
-            <li><a href="pages/courseyear.html">Course Year</a></li>
+            <li><a href="{{ route('courses') }}">Course Year</a></li>
             <li><a href="pages/syllabus.html">Syllabus</a></li>
             <li><a href="pages/mottos.html">Mottos</a></li>
             <li><a href="{{ route('organization') }}">Organization</a></li>
         </ul>
-      </li>
+      </li>DISCOUNT 30%
+
      
 
       <li><a class="drop" href="#">Admissions</a>
@@ -93,8 +108,8 @@ Licence URI: https://www.os-templates.com/template-terms
         
           <li><a class="drop" href="#">Multimedia</a>
             <ul>
-              <li><a href="pages/audio.html">Audio</a></li>
-              <li><a href="pages/vd.html">Video</a></li>
+              <li><a href="{{ route('mediamp3') }}">Audio</a></li>
+              <li><a href="{{ route('mediamp4') }}">Video</a></li>
               
             </ul>
           </li>
@@ -240,9 +255,9 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
-<script src="layout/scripts/jquery.flexslider-min.js"></script>
+<script src="{{ asset('layout/scripts/jquery.min.js')}}"></script>
+<script src="{{ asset('layout/scripts/jquery.backtotop.js')}}"></script>
+<script src="{{ asset('layout/scripts/jquery.mobilemenu.js')}}"></script>
+<script src="{{asset('layout/scripts/jquery.flexslider-min.js')}}"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
              
             <div class="one_third first"> <p>
                 <video width="320" height="220" controls>
-                    <source src="{{asset('multimedia/images/'.$media->file)}}" type="video/mp4">
+                    <source src="{{asset('storage/multimedia/'.$media->file)}}" type="video/mp4">
                 </video>
               </p>
               <p>

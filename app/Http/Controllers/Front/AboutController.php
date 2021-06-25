@@ -21,6 +21,12 @@ class AboutController extends Controller
        
         return view('front.news',compact('news'));
     }
+    public function new_details($id)
+    {
+       $new = News::findOrFail($id);
+       
+        return view('front.news-detail',compact('new'));
+    }
 
     public function gallery()
     {

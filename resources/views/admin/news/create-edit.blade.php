@@ -26,20 +26,36 @@
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="title" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                        Title
+                        <label for="newstitleeng" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        News Title (ENG)
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="title" id="title" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{old('title') ?? $new->title}}">
+                        <input type="text" name="newstitleeng" id="newstitleeng" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{old('newstitleeng') ?? $new->newstitleeng}}">
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="news" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                        News
+                      <label for="newstitlemyan" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                      News Title (MYAN)
+                      </label>
+                      <div class="mt-1 sm:mt-0 sm:col-span-2">
+                        <input type="text" name="newstitlemyan" id="newstitlemyan" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{old('newstitlemyan') ?? $new->newstitlemyan}}">
+                      </div>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                        <label for="newseng" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        News(ENG)
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                        <input type="text" name="news" id="news" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{ old('news')?? $new->news }}">
+                        <input type="text" name="newseng" id="newseng" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{ old('newseng')?? $new->newseng }}">
                         </div>
+                    </div>
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                      <label for="newsmyan" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                      News(MYAN)
+                      </label>
+                      <div class="mt-1 sm:mt-0 sm:col-span-2">
+                      <input type="text" name="newsmyan" id="newsmyan" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value="{{ old('newsmyan')?? $new->newsmyan }}">
+                      </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
                         <label for="upcomedate" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">

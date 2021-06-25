@@ -1,20 +1,7 @@
 @extends('front.layout.base')
 @section('content')
 <div class="wrapper row3">
-  <style>
-    .gallery{
-      margin:5px;!important
-      margin-bottom: 30px;
-    }
-    #gallery-div{
-      height: 250px; overflow:hidden;
-      border: solid #808080	 1px;
-    }
-    .gallery-img{
-      width: 250px;
-      
-    }
-  </style>
+  
     <main class="hoc container clear"> 
       <!-- main body -->
       <!-- ################################################################################################ -->
