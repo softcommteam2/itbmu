@@ -38,7 +38,7 @@
                       @foreach ($galleries as $gallery)
                         <tr class="bg-white">
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                            <span class="font-medium text-gray-900">{{ $gallery->activity->id }} </span>
+                            <span class="font-medium text-gray-900">{{ $gallery->titleid }} </span>
                             </td>
 
                             <td class="justify-center px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">

@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
+    public function home()
+    {
+        return view('front.layout.home');
+    }
     public function organization()
     {
        $organizations = Organization::class;
@@ -52,5 +56,49 @@ class AboutController extends Controller
     {
         $medias = Multimedia::class;
         return view('front.mediamp4', compact('medias'));
+    }
+
+    public function setup()
+    {
+        return view('front.setup');
+    }
+
+    public function faq()
+    {
+        return view('front.faq');
+    }
+
+    public function entrance_exam()
+    {
+        return view('front.entrance-exam');
+    }
+
+    public function appform()
+    {
+        return view('front.appform');
+    }
+    public function appform2()
+    {
+        return view('front.appform2');
+    }
+
+    public function centralmain()
+    {
+        return view('front.centralmain');
+    }
+
+    public function library()
+    {
+        return view('front.library');
+    }
+
+    public function booklist()
+    {
+        return view('front.booklist');
+    }
+
+    public function dormitories()
+    {
+        return view('front.dormitories');
     }
 }

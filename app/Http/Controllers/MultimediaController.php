@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Multimedia;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 class MultimediaController extends Controller
 {
 
