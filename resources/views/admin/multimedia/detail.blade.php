@@ -18,8 +18,8 @@
           <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
           <div class="flex justify-center mt-2">
             <video width="320" height="220" controls>
-              <source src="{{asset('multimedia/'.$media->file)}}" type="video/mp4">
-            </video>
+              <source src="{{asset('storage/multimedia/'.$media->file)}}" type="video/mp4">
+          </video>
             {{-- <img src="{{asset('multimedia/images/'.$media->file)}}" class="rounded-md w-96 h-96"> --}}
           </div>
           </div>

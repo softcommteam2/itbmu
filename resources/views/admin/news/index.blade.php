@@ -95,27 +95,10 @@
                             </td>
                             <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                                 @foreach (unserialize($new->photo) as $photo)
-
-                                {{ $photo }}
-                                
-                                <img src="{{asset('news/images/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
+                                    <img src="{{asset('storage/news/images/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                                 @endforeach
                             </td>
-                            {{-- <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.unserialize($new->photo))}}" class="object-center w-16 h-16 mx-auto rounded-md">
-                            </td> --}}
-                            {{-- <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo2)}}" class="object-center w-16 h-16 mx-auto rounded-md">
-                            </td>
-                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo3)}}" class="object-center w-16 h-16 mx-auto rounded-md">
-                            </td>
-                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo4)}}" class="object-center w-16 h-16 mx-auto rounded-md">
-                            </td>
-                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo5)}}" class="object-center w-16 h-16 mx-auto rounded-md">
-                            </td> --}}
+                           
                             <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                                 <a href="{{ url('admin/news/'.$new->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
                                     Edit
