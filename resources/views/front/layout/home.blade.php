@@ -31,7 +31,7 @@
         <!-- ################################################################################################ -->
         <article class="group">
         <div class="sectiontitle">
-            <h6 class="heading">Welcome to the Universityyyyyyyy</h6>
+            <h6 class="heading">Welcome to the University</h6>
         
         </div>
         

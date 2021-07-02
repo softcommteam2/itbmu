@@ -65,25 +65,13 @@
                       Title
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
-                      News
+                      New Title
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
                       UPcome Date
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
-                      Photo 1
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
-                      Photo 2
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
-                      Photo 3
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
-                      Photo 4
-                      </th>
-                      <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
-                      Photo 3
+                      Photo 
                       </th>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase bg-gray-50">
                       Actions
@@ -105,10 +93,18 @@
                             <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                             <time datetime="2020-07-11">{{ $new->upcomedate }}</time>
                             </td>
-                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('news/images/'.$new->photo1)}}" class="object-center w-16 h-16 mx-auto rounded-md">
+                            <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                                @foreach (unserialize($new->photo) as $photo)
+
+                                {{ $photo }}
+                                
+                                <img src="{{asset('news/images/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
+                                @endforeach
                             </td>
-                            <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                            {{-- <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
+                                <img src="{{asset('news/images/'.unserialize($new->photo))}}" class="object-center w-16 h-16 mx-auto rounded-md">
+                            </td> --}}
+                            {{-- <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                                 <img src="{{asset('news/images/'.$new->photo2)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                             </td>
                             <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
@@ -119,7 +115,7 @@
                             </td>
                             <td class="justify-center px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                                 <img src="{{asset('news/images/'.$new->photo5)}}" class="object-center w-16 h-16 mx-auto rounded-md">
-                            </td>
+                            </td> --}}
                             <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                                 <a href="{{ url('admin/news/'.$new->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
                                     Edit

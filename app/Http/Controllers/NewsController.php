@@ -21,32 +21,28 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-
-           'newstitlemyan' => 'required',
-           'newsmyan'  => 'required',
-           'photo1'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:20480'
-
+        $data= $request->validate([
+            'newstitlemyan' => 'required',
+            'newstitleeng' => 'required',
+            'newsmyan' => 'required',
+            'newseng' => 'required',
+            'upcomedate' => 'required',
+            'type' => 'required',
+            'photo'=> 'required'
+            // 'photo'=> 'image|mimes:jpeg,png,jpg,gif,svg|max:20480'
         ]);
+        $photos = [];
+            foreach($request->file('photo') as $photo)
+            {
+                $file_name =time().'.'.$photo->getClientOriginalName();
+                array_push($photos,$file_name);
+                $photo->storeAs('news/images',$file_name);
+                // $data['photo']=serialize($file_name);
+            }
+       $photo_names = serialize($photos);
+       $data['photo']= $photo_names;
+        News::create($data);
 
-
-        $new =new News();
-        $new->newstitlemyan = $request->newstitlemyan;
-        $new->newstitleeng = $request->newstitleeng;
-        $new->newsmyan = $request->newsmyan;
-        $new->newseng = $request->newseng;
-        $new->upcomedate = $request->upcomedate;
-        $new->photo1 =time().'.'.$request->photo1->extension();
-        $request->photo1->move(public_path('news/images'), $new->photo1);
-        $new->photo2 =time().'.'.$request->photo2->extension();
-        $request->photo2->move(public_path('news/images'), $new->photo2);
-        $new->photo3 =time().'.'.$request->photo3->extension();
-        $request->photo3->move(public_path('news/images'), $new->photo3);
-        $new->photo4 =time().'.'.$request->photo4->extension();
-        $request->photo4->move(public_path('news/images'), $new->photo4);
-        $new->photo5 =time().'.'.$request->photo5->extension();
-        $request->photo5->move(public_path('news/images'), $new->photo5);
-        $new->save();
         return redirect('admin/news');
     }
 

@@ -18,13 +18,10 @@ class CreateNewsTable extends Migration
             $table->string('newstitleeng');
             $table->string('newstitlemyan');
             $table->longText('newseng');
-            $table->string('newsmyan');
+            $table->longText('newsmyan');
             $table->string('upcomedate');
-            $table->string('photo1');
-            $table->string('photo2')->nullable();
-            $table->string('photo3')->nullable();
-            $table->string('photo4')->nullable();
-            $table->string('photo5')->nullable();
+            $table->string('type');
+            $table->string('photo');
             $table->timestamps();
         });
     }
