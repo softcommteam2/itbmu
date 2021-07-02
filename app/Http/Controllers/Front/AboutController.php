@@ -10,7 +10,9 @@ class AboutController extends Controller
 {
     public function home()
     {
-        return view('front.layout.home');
+        $announcements = News::where('type', '0');
+        $news = News::where('type','1');
+        return view('front.layout.home',compact('announcements','news'));
     }
     public function organization()
     {

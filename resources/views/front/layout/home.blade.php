@@ -74,23 +74,29 @@
 
         <div class="one_half first card">
             <div class="bg-card-header">Announcement</div> 
-                <div class="p-0 card-body">
-                <div class="border-bottom p-3 scrollable">
+            <div class="p-0 card-body">
+            <div class="border-bottom p-3 scrollable">
                 <table>
                     <tbody>
-                    <tr>
-                        <td><img src="images/01.png" width="100px" height="82px"></td>
-                        <td colspan="3">The Opening of the Univsersity for the Academic Year 2021-2022</td>
+                        @foreach ($announcements as $ann)
+                            
+                       
+                    <div>
+                        <tr>
+                            <td><img src="" width="100px" height="82px"></td>
+                            <td colspan="3">{{ $ann->newstitleeng }}</td>
+                            
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td class="secondary"><i class="far fa-user"> Admin</i> </td>
+                            <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
+                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="pages/newdetail.html">Show More </a></i></td>
                         
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                        <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
-                        <td class="secondary"><i class="fas fa-plus-circle"> <a href="pages/newdetail.html">Show More </a></i></td>
+                        </tr>
+                    </div>
+                    @endforeach
                     
-                    </tr>
-                    
-                    <tr>
+                    {{-- <tr>
                         <td><img src="images/01.png" width="100px" height="82px"></td>
                         <td colspan="3">ပြည်ထောင်စုသမ္မတမြန်မာနိုင်ငံတော်အစိုးရ သာသနာရေးနှင့်ယဉ်ကျေးမှုဝန်ကြီးဌာန သာသနာရေးဦးစီးဌာန ဒုတိယဦးစီးမှူးနှင့်</td>
                         
@@ -100,7 +106,7 @@
                         <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
                         <td class="secondary"><i class="fas fa-plus-circle"> Show More </i></td>
                     
-                    </tr>
+                    </tr> --}}
                     </tbody>
                 </table>
                 <nav class="pagination">
@@ -112,9 +118,9 @@
                     <li><a href="#">Next &raquo;</a></li>
                 </ul>
                 </nav>
-                </div>
-                </div>
-                </div>
+            </div>
+            </div>
+        </div>
                 <div class="one_half card">
                 <div class="bg-card-header">News</div> 
                     <div class="p-0 card-body">
