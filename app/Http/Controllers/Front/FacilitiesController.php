@@ -27,4 +27,14 @@ class FacilitiesController extends Controller
     {
         return view('front.dormitories');
     }
+
+    public function medical_facilities()
+    {
+        return view('front.medical-facilities');
+    }
+
+    public function meditation_hall()
+    {
+        return view('front.meditation_hall');
+    }
 }

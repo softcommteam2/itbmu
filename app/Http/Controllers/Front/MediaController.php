@@ -20,6 +20,10 @@ class MediaController extends Controller
 
         return view('front.news-detail',compact('new'));
     }
+    public function magazine()
+    {
+        return view('front.magazine');
+    }
   public function mediamp3()
     {
         $medias = Multimedia::class;

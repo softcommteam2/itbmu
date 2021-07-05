@@ -8,7 +8,7 @@
         <!-- ################################################################################################ -->
         <div id="gallery">
           <figure>
-          
+
             <header class="heading"  align="center">Organization</header>
             <h2 style="font-size:16px; font-weight:bold;">Rector</h2>
             <ul class="nospace clear">
@@ -46,4 +46,4 @@
 </div>
 
 @endsection
-    
+

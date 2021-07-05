@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AdmissionController extends Controller
 {
+    public function entrance_form()
+    {
+        return view('front.entrance-form');
+    }
 
     public function appform()
     {
@@ -15,5 +19,10 @@ class AdmissionController extends Controller
     public function appform2()
     {
         return view('front.appform2');
+    }
+
+    public function cy_timetables()
+    {
+        return view('front.cy-timetables');
     }
 }

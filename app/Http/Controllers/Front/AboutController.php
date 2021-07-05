@@ -23,6 +23,10 @@ class AboutController extends Controller
         return view('front.course_year', compact('courses'));
     }
 
+    public function syllabus()
+    {
+        return view('front.syllabus');
+    }
     public function mottos()
     {
         return view('front.mottos');
