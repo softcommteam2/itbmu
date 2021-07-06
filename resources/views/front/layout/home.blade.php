@@ -93,17 +93,6 @@
                                 </div>
                                 @endforeach
 
-                                {{-- <tr>
-                                    <td><img src="images/01.png" width="100px" height="82px"></td>
-                                    <td colspan="3">ပြည်ထောင်စုသမ္မတမြန်မာနိုင်ငံတော်အစိုးရ သာသနာရေးနှင့်ယဉ်ကျေးမှုဝန်ကြီးဌာန သာသနာရေးဦးစီးဌာန ဒုတိယဦးစီးမှူးနှင့်</td>
-
-                                </tr>
-                                <tr style="text-align: center;">
-                                    <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                                    <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
-                                    <td class="secondary"><i class="fas fa-plus-circle"> Show More </i></td>
-
-                                </tr> --}}
                                 </tbody>
                             </table>
                             <nav class="pagination">
@@ -128,9 +117,10 @@
                                     <div>
                                         <tr>
                                             <td>
-                                            @foreach (unserialize($new->photo) as $photo)
+                                                <img class="gallery-img" src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="100px">
+                                            {{-- @foreach (unserialize($new->photo) as $photo)
                                                 <img src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="82px">
-                                            @endforeach
+                                            @endforeach --}}
                                             </td>
                                             <td colspan="3">{{ $new->newstitleeng }}</td>
 
