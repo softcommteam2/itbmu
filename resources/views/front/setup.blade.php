@@ -2,66 +2,66 @@
 @section('content')
     <div class="wrapper row3">
         <style>
-                /* Dropdown Button */
-        
+            /* Dropdown Button */
+
     .dropbtn {
-            background-color: #FFA500;
-            color: white;
-            padding: 12px;
-            font-size: 16px;
-            text-align: left;
-            border: none;
-            cursor: pointer;
-            min-width: 400px;
-        }
-        /* Dropdown button on hover & focus */
-        
-        .dropbtn:hover,
-        .dropbtn:focus {
-            background-color: #ffc125;
-        }
-        /* The container <div> - needed to position the dropdown content */
-        
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        /* Dropdown Content (Hidden by Default) */
-        
-        .dropdown-content {
-            display: none;
-            position: relative;
-            background-color: #f9f9f9;
-            min-width: 400px;
-            /*160px*/
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        }
-        /* Links inside the dropdown */
-        
-        .dropdown-content a {
-            color: black;
-            padding: 10px 14px;
-            text-decoration: none;
-            display: block;
-        }
-        /* Change color of dropdown links on hover */
-        
-        .dropdown-content a:hover {
-            background-color: #f1f1f1
-        }
-        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-        
-        .show {
-            display: block;
-        }
-        </style>
-        <main class="hoc container clear">
+        background-color: #FFA500;
+        color: white;
+        padding: 12px;
+        font-size: 16px;
+        text-align: left;
+        border: none;
+        cursor: pointer;
+        min-width: 400px;
+    }
+    /* Dropdown button on hover & focus */
+
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: #ffc125;
+    }
+    /* The container <div> - needed to position the dropdown content */
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    /* Dropdown Content (Hidden by Default) */
+
+    .dropdown-content {
+        display: none;
+        position: relative;
+        background-color: #f9f9f9;
+        min-width: 400px;
+        /*160px*/
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+    /* Links inside the dropdown */
+
+    .dropdown-content a {
+        color: black;
+        padding: 10px 14px;
+        text-decoration: none;
+        display: block;
+    }
+    /* Change color of dropdown links on hover */
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1
+    }
+    /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+
+    .show {
+        display: block;
+    }
+    </style>
+        <main class="container hoc clear">
             <!-- main body -->
             <!-- ################################################################################################ -->
             <div class="content">
                 <!-- ################################################################################################ -->
                 <h1  align="center">Organization Set-up</h1>
-            
+
                 <h6 style="font-size:16px; font-weight:bold;">Academic Sector</h3>
                 <p style="text-align:justify;">
                     The Academic Sector of the University is formed into four Faculties. These four Faculties are, further, constituted with specific Departments. Each Faculty is headed by a Dean under whose supervision its Departments function. The structure of the Faculties with their Departments are as following:-

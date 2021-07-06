@@ -37,4 +37,14 @@ class FacilitiesController extends Controller
     {
         return view('front.meditation_hall');
     }
+
+    public function sima()
+    {
+        return view('front.sima');
+    }
+
+    public function tooth_pagoda()
+    {
+        return view('front.tooth_pagoda');
+    }
 }

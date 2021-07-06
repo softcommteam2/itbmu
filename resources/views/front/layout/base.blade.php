@@ -6,7 +6,7 @@ Author URI: https://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
-<html lang="">
+<html lang="en">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 
 <head>
@@ -16,11 +16,14 @@ Licence URI: https://www.os-templates.com/template-terms
     <link href="{{ asset('layout/styles/layout.css') }}" rel="stylesheet" type="text/css" media="all">
     <link href="{{ asset('layout/styles/custom.flexslider.css') }}" rel="stylesheet" type="text/css" media="all">
     <script src="https://kit.fontawesome.com/08bf8f3019.js" crossorigin="anonymous"></script>
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
 
     <!-- Start WOWSlider.com HEAD section -->
     <link rel="stylesheet" type="text/css" href="{{ asset('engine1/style.css') }}" />
     <script type="text/javascript" src="{{ asset('engine1/jquery.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
     <!-- End WOWSlider.com HEAD section -->
+
 </head>
 
 <body id="top">
@@ -73,7 +76,7 @@ Licence URI: https://www.os-templates.com/template-terms
                         <li><a href="{{ route('setup') }}">Set-up</a></li>
                         <li><a href="{{ route('faculities') }}">Faculities</a></li>
                         <li><a href="{{ route('courses') }}">Course Year</a></li>
-                        <li><a href="pages/syllabus.html">Syllabus</a></li>
+                        <li><a href="{{ route('syllabus') }}">Syllabus</a></li>
                         <li><a href="{{ route('mottos') }}">Mottos</a></li>
                         <li><a href="{{ route('organizations') }}">Organization</a></li>
                     </ul>
@@ -82,9 +85,9 @@ Licence URI: https://www.os-templates.com/template-terms
 
                 <li><a class="drop" href="#">Admissions</a>
                     <ul>
-                        <li><a href="pages/itbmuent.html">ITBMU Entrance Form Download</a></li>
+                        <li><a href="{{ route('entrance') }}">ITBMU Entrance Form Download</a></li>
                         <li><a href="{{ route('appform') }}">Application Form</a></li>
-                        <li><a href="pages/cyeartime.html">Course Years Timetable</a></li>
+                        <li><a href="{{ route('cy-timetables') }}">Course Years Timetable</a></li>
                     </ul>
                 </li>
 
@@ -92,7 +95,7 @@ Licence URI: https://www.os-templates.com/template-terms
                 <li><a class="drop" href="#">Media</a>
                     <ul>
                         <li><a href="{{ route('new') }}">News & Events</a></li>
-                        <li><a href="pages/magazine.html">Magazine</a></li>
+                        <li><a href="{{ route('magazine') }}">Magazine</a></li>
 
                         <li><a class="drop" href="#">Multimedia</a>
                             <ul>
@@ -115,20 +118,20 @@ Licence URI: https://www.os-templates.com/template-terms
                             </ul>
                         </li>
                         <li><a href="{{ route('dormitories') }}">Dormitories (Hostels)</a></li>
-                        <li><a href="pages/mcf.html">Medical Facilities</a></li>
-                        <li><a href="pages/meditationhall.html">Meditation Hall</a></li>
-                        <li><a href="pages/sima.html">Sima</a></li>
-                        <li><a href="pages/sacred.html">Sacred Tooth Relic Pagoda</a></li>
+                        <li><a href="{{ route('medical-facilities') }}">Medical Facilities</a></li>
+                        <li><a href="{{ route('meditation-hall') }}">Meditation Hall</a></li>
+                        <li><a href="{{ route('sima') }}">Sima</a></li>
+                        <li><a href="{{ route('tooth-pagoda') }}">Sacred Tooth Relic Pagoda</a></li>
                     </ul>
                 </li>
 
                 <li><a class="drop" href="#">Exam Result</a>
                     <ul>
                         <li><a href="{{ route('entrance') }}">Entrance</a></li>
-                        <li><a href="pages/dipcou.html">Diploma course</a></li>
-                        <li><a href="pages/gracou.html">Graduate degree Course</a></li>
-                        <li><a href="pages/magra.html">M.A Post Graduate Course</a></li>
-                        <li><a href="pages/pagra.html">P.A Post Graduate Course</a></li>
+                        <li><a href="{{ route('diploma') }}">Diploma course</a></li>
+                        <li><a href="{{ route('graduate') }}">Graduate degree Course</a></li>
+                        <li><a href="{{ route('ma-graduate') }}">M.A Post Graduate Course</a></li>
+                        <li><a href="{{ route('pa-graduate') }}">P.A Post Graduate Course</a></li>
                     </ul>
                 </li>
 
@@ -138,8 +141,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <!-- ################################################################################################ -->
         </nav>
     </div>
-    <!-- ################################################################################################ -->
-    <!-- ################################################################################################ -->
+
     <!-- ################################################################################################ -->
 
 
@@ -151,26 +153,14 @@ Licence URI: https://www.os-templates.com/template-terms
     <script type="text/javascript" src="{{ asset('engine1/wowslider.js') }}"></script>
     <script type="text/javascript" src="{{ asset('engine1/script.js') }}"></script>
     <!-- End WOWSlider.com BODY section -->
-    <!-- ################################################################################################ -->
-    <!-- ################################################################################################ -->
-
             <!-- main body -->
             <!-- ################################################################################################ -->
           @yield('article-content')
             <!-- ################################################################################################ -->
             <!-- / main body -->
     <!-- ################################################################################################ -->
-    {{-- <div class="wrapper row3">
-        <main class="container hoc clear"> --}}
-            @yield('content')
-        {{-- </main>
-    </div> --}}
-        <!-- ################################################################################################ -->
-        <!-- ################################################################################################ -->
-        <!-- ################################################################################################ -->
 
-        <!-- ################################################################################################ -->
-        <!-- ################################################################################################ -->
+            @yield('content')
         <!-- ################################################################################################ -->
         <div class="wrapper row4">
             <footer id="footer" class="hoc clear">
@@ -212,8 +202,6 @@ Licence URI: https://www.os-templates.com/template-terms
             </footer>
         </div>
         <!-- ################################################################################################ -->
-        <!-- ################################################################################################ -->
-        <!-- ################################################################################################ -->
         <div class="wrapper row5">
             <div id="copyright" class="hoc clear">
                 <!-- ################################################################################################ -->
@@ -223,14 +211,13 @@ Licence URI: https://www.os-templates.com/template-terms
             </div>
         </div>
         <!-- ################################################################################################ -->
-        <!-- ################################################################################################ -->
-        <!-- ################################################################################################ -->
         <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
         <!-- JAVASCRIPTS -->
         <script src="{{ asset('layout/scripts/jquery.min.js')}}"></script>
         <script src="{{ asset('layout/scripts/jquery.backtotop.js')}}"></script>
         <script src="{{ asset('layout/scripts/jquery.mobilemenu.js')}}"></script>
         <script src="{{ asset('layout/scripts/jquery.flexslider-min.js')}}"></script>
+        @yield('script')
 </body>
 
 </html>

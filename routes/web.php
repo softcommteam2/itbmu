@@ -48,7 +48,7 @@ Route::get('/entrance-exams',[ExamResultController::class, 'entrance_exam'])->na
 Route::get('/diploma', [ExamResultController::class, 'diploma'])->name('diploma');
 Route::get('graduate', [ExamResultController::class, 'graduate'])->name('graduate');
 Route::get('/ma-graduate', [ExamResultController::class, 'ma_graduate'])->name('ma-graduate');
-Route::get('/pa-graduate', [ExamResultController::class, 'pa-graduate'])->name('pa-graduate');
+Route::get('/pa-graduate', [ExamResultController::class, 'pa_graduate'])->name('pa-graduate');
 //-------------------------End Exam Result------------------------------------//
 
 //-------------------------Other Menu Tab-------------------------------------//
