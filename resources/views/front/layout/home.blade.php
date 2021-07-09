@@ -113,13 +113,12 @@
                         <div class="p-3 border-bottom">
                             <table>
                                 <tbody>
-                                    {{-- @foreach ($news as $new) --}}
+                                    @foreach ($news as $new)
                                     <div>
                                         <tr>
-                                            <td><a href="{{ asset('storage/news/theannouncement.pdf') }}" target="_Black">
+                                            <td><a href="{{ asset('/theannouncement.pdf') }}" target="_Black">
                                                 {{-- <img src="images/The Announcement.jpg" class="borderedbox"> --}}
-                                            
-                                                <img class="gallery-img" src="{{ asset('storage/news/theannouncement.jpg') }}" width="100px" height="100px"></a>
+                                                <img class="gallery-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}" width="100px" height="100px"></a>
                                             </td>
                                             {{-- <td>
                                                 <img class="gallery-img" src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="100px">
@@ -135,7 +134,7 @@
 
                                         </tr>
                                     </div>
-                                    {{-- @endforeach --}}
+                                    @endforeach
 
                                     {{-- <tr>
                                     <td><img src="images/01.png" width="100px" height="82px"></td>

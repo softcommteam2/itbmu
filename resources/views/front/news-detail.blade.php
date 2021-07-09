@@ -13,7 +13,7 @@
             <!-- ################################################################################################ -->
             <h1>{{ $new->newstitleeng }}</h1>
             <div id="new-detail">
-                <img class="imgl borderedbox inspace-5" src="{{asset('storage/news/images/'.$new::first_photo($new))}}" width="150px" height="150px">
+                <img class="imgl borderedbox inspace-5" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}" width="150px" height="150px">
               <p>{{ $new->newseng }}</p>
             </div>
 
@@ -26,7 +26,7 @@
                         @foreach (unserialize($new->photo) as $photo)
 
                         <li class="one_quarter gallery" >
-                            <img class="gallery-img" src="{{asset('storage/news/images/'.$photo)}}">
+                            <img class="gallery-img" src="{{asset('storage/news/'.$photo)}}">
                         </li>
                         @endforeach
 

@@ -16,7 +16,7 @@
                 {{-- <td rowspan="3" width="160px" ><img src="{{asset('storage/news/images/'.$new->photo)}}" style="width:150px; height:150px;background-color: #fff;"></td> --}}
                 <td rowspan="3" width="160px" >
                 @foreach (unserialize($new->photo) as $photo)
-                    <img src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="82px">
+                    <img src="{{asset('storage/news/'.$photo)}}" width="100px" height="82px">
                 @endforeach
                 </td>
                 <td colspan="3" style="border: 0px solid;background-color: #fff;"><strong>{{ $new->newstitleeng }}</strong></td>

@@ -28,7 +28,7 @@ class NewsController extends Controller
             'newseng' => 'required',
             'upcomedate' => 'required',
             'type' => 'required',
-            'photo'=> 'required|mimes:jpeg,png,jpg,gif,svg|max:20480'
+            'photo'=> 'required'
         ]);
         $photos = [];
             foreach($request->file('photo') as $photo)
