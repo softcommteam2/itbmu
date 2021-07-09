@@ -66,7 +66,7 @@
             <div class="group btmspace-50 demo">
 
                 <div class="one_half first card">
-                    <div class="bg-card-header">Announcement</div>
+                    <div class="bg-card-header">News</div>
                     <div class="p-0 card-body">
                         <div class="p-3 border-bottom scrollable">
                             <table>
@@ -108,31 +108,34 @@
                     </div>
                 </div>
                 <div class="one_half card">
-                    <div class="bg-card-header">News</div>
+                    <div class="bg-card-header">Announcement</div>
                     <div class="p-0 card-body">
                         <div class="p-3 border-bottom">
                             <table>
                                 <tbody>
-                                    @foreach ($news as $new)
+                                    {{-- @foreach ($news as $new) --}}
                                     <div>
                                         <tr>
-                                            <td>
-                                                <img class="gallery-img" src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="100px">
-                                            {{-- @foreach (unserialize($new->photo) as $photo)
-                                                <img src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="82px">
-                                            @endforeach --}}
+                                            <td><a href="{{ asset('storage/news/theannouncement.pdf') }}" target="_Black">
+                                                {{-- <img src="images/The Announcement.jpg" class="borderedbox"> --}}
+                                            
+                                                <img class="gallery-img" src="{{ asset('storage/news/theannouncement.jpg') }}" width="100px" height="100px"></a>
                                             </td>
-                                            <td colspan="3">{{ $new->newstitleeng }}</td>
+                                            {{-- <td>
+                                                <img class="gallery-img" src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="100px">
+                                          
+                                            </td> --}}
+                                            <td colspan="3">The Announcement for 2021</td>
 
                                         </tr>
                                         <tr style="text-align: center;">
                                             <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                                            <td class="secondary"><i class="far fa-calendar-alt"> {{ date('d-m-Y', strtotime($new->upcomedate)) }}</i></td>
-                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$new->id) }}">Show More </a></i></td>
+                                            <td class="secondary"><i class="far fa-calendar-alt"> 01/04/2021</i></td>
+                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/1') }}">Show More </a></i></td>
 
                                         </tr>
                                     </div>
-                                    @endforeach
+                                    {{-- @endforeach --}}
 
                                     {{-- <tr>
                                     <td><img src="images/01.png" width="100px" height="82px"></td>

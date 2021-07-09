@@ -12,7 +12,7 @@ class News extends Model
 
     public static function first_photo($new)
     {
-        $photos = unserialize($new->photo);
+        $photos = unserialize($new);
         return $photos[0];
        
     }

@@ -1,24 +1,21 @@
 @extends('front.layout.base')
 @section('content')
 <div class="wrapper row3">
-  
-    <main class="hoc container clear"> 
+
+    <main class="container hoc clear">
       <!-- main body -->
       <!-- ################################################################################################ -->
-      <div class="content"> 
+      <div class="content">
         <!-- ################################################################################################ -->
-        <div id="gallery">             
+        <div id="gallery">
           <figure>
             <h1 class="heading" align="center">ITBMU Photo Gallery</h1>
-              @foreach($galleries as $titleid=>$photolist)
+              @foreach($galleries as $gallery)
                 <ul class="nospace clear">
-                  @foreach ($photolist as $gallery)
                     <li class="one_quarter gallery">
                       <div id="gallery-div">
                         <img class="gallery-img" src="{{asset('gallery/images/'.$gallery->photo)}}" alt="" >
                       </div></li>
-                  @endforeach
-                  
                 </ul>
               @endforeach
               {{-- <figcaption>Gallery Description Goes Here</figcaption> --}}

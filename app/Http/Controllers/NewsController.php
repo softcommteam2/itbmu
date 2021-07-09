@@ -28,15 +28,14 @@ class NewsController extends Controller
             'newseng' => 'required',
             'upcomedate' => 'required',
             'type' => 'required',
-            'photo'=> 'required'
-            // 'photo'=> 'image|mimes:jpeg,png,jpg,gif,svg|max:20480'
+            'photo'=> 'required|mimes:jpeg,png,jpg,gif,svg|max:20480'
         ]);
         $photos = [];
             foreach($request->file('photo') as $photo)
             {
                 $file_name =time().'.'.$photo->getClientOriginalName();
                 array_push($photos,$file_name);
-                $photo->storeAs('news/images',$file_name);
+                $photo->storeAs('news',$file_name);
                 // $data['photo']=serialize($file_name);
             }
        $photo_names = serialize($photos);

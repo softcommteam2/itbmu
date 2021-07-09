@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{News,Gallery};
-
+use Carbon\Carbon;
 class MainController extends Controller
 {
     public function home()
@@ -16,9 +16,7 @@ class MainController extends Controller
     }
     public function gallery()
     {
-        $galleries = Gallery::orderBy('created_at')->get()->groupBy(function($data) {
-            return $data->titleid;
-        });
+        $galleries = Gallery::all();
 
         return view('front.photo-gallery', compact('galleries'));
     }
