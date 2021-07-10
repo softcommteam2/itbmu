@@ -71,17 +71,15 @@
                         <div class="p-3 border-bottom scrollable">
                             <table>
                                 <tbody>
-                                    @foreach ($announcements as $ann)
+                                    @foreach ($news as $new)
 
 
                                 <div>
                                     <tr>
                                         <td>
-                                        @foreach (unserialize($ann->photo) as $photo)
-                                            <img src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="82px">
-                                        @endforeach
+                                            <img class="borderedbox" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}" width="100px" height="100px">
                                         </td>
-                                        <td colspan="3">{{ $ann->newstitleeng }}</td>
+                                        <td colspan="3">{{ $new->newstitleeng }}</td>
 
                                     </tr>
                                     <tr style="text-align: center;">
@@ -113,16 +111,17 @@
                         <div class="p-3 border-bottom">
                             <table>
                                 <tbody>
-                                    @foreach ($news as $new)
+                                    {{-- @foreach ($announcements as $ann) --}}
                                     <div>
                                         <tr>
                                             <td><a href="{{ asset('/theannouncement.pdf') }}" target="_Black">
-                                                {{-- <img src="images/The Announcement.jpg" class="borderedbox"> --}}
-                                                <img class="gallery-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}" width="100px" height="100px"></a>
+                                                <img src="images/The Announcement.jpg" class="borderedbox" width="100px" height="100px">
+                                                {{-- <img class="gallery-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}" width="100px" height="100px"> --}}
+                                            </a>
                                             </td>
                                             {{-- <td>
                                                 <img class="gallery-img" src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="100px">
-                                          
+
                                             </td> --}}
                                             <td colspan="3">The Announcement for 2021</td>
 
@@ -134,31 +133,9 @@
 
                                         </tr>
                                     </div>
-                                    @endforeach
+                                    {{-- @endforeach --}}
 
-                                    {{-- <tr>
-                                    <td><img src="images/01.png" width="100px" height="82px"></td>
-                                    <td colspan="3">ပြည်ထောင်စုသမ္မတမြန်မာနိုင်ငံတော်အစိုးရ သာသနာရေးနှင့်ယဉ်ကျေးမှုဝန်ကြီးဌာန သာသနာရေးဦးစီးဌာန ဒုတိယဦးစီးမှူးနှင့်</td>
 
-                                    </tr>
-                                    <tr style="text-align: center;">
-                                    <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                                    <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
-                                    <td class="secondary"><i class="fas fa-plus-circle"> Show More </i></td>
-
-                                    </tr>
-
-                                    <tr>
-                                    <td><img src="images/01.png" width="100px" height="82px"></td>
-                                    <td colspan="3">ပြည်ထောင်စုသမ္မတမြန်မာနိုင်ငံတော်အစိုးရ သာသနာရေးနှင့်ယဉ်ကျေးမှုဝန်ကြီးဌာန သာသနာရေးဦးစီးဌာန ဒုတိယဦးစီးမှူးနှင့်</td>
-
-                                    </tr>
-                                    <tr style="text-align: center;">
-                                    <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                                    <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
-                                    <td class="secondary"><i class="fas fa-plus-circle"> Show More </i></td>
-
-                                    </tr> --}}
                                 </tbody>
                             </table>
                             <nav class="pagination">

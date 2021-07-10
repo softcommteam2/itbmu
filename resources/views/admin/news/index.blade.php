@@ -56,7 +56,7 @@
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
                                 {{-- @dd($new->photo) --}}
                                 @foreach (unserialize($new->photo) as $photo)
-                                <img src="{{asset('storage/news/images/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
+                                <img src="{{asset('storage/news/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
                                 @endforeach
                             </td>
 
