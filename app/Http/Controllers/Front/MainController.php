@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{News,Gallery};
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
     public function home()
@@ -16,13 +17,22 @@ class MainController extends Controller
     }
     public function gallery()
     {
-        $galleries = Gallery::all();
-
+        $galleries = Gallery::all();       
         return view('front.photo-gallery', compact('galleries'));
     }
     public function faq()
     {
         return view('front.faq');
+    }
+
+    public function contact_us()
+    {
+        return view('front.contact-us');
+    }
+
+    public function feedback()
+    {
+        return view('front.feedback');
     }
 
 }

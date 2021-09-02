@@ -23,28 +23,125 @@ Licence URI: https://www.os-templates.com/template-terms
     <script type="text/javascript" src="{{ asset('engine1/jquery.js') }}"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
     <!-- End WOWSlider.com HEAD section -->
+    <style>
+        .default-img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            width: 120px;
+            height: 100px;
+        }
+        .new-detail, #gallery-heading{
+            clear: both!important;
+            }
+        .new-detail-img{
+            float: left;
+            margin-right: 10px;
+            }
+    
+        .new-detail-para{
+            text-align: justify;
+            color:#000;
+        }
+      .myGallery .item {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        }
 
+        .myGallery .item img {
+        vertical-align: middle;
+        }
+
+        .myGallery .caption {
+        margin: 0;
+        padding: 1em;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+        transition: transform .5s;
+        transform: translateY(100%);
+        background: rgba(0, 0, 0, .7);
+        color: rgb(255, 255, 255);
+        }
+
+        .myGallery .item:hover .caption {
+        transform: translateY(0%);
+        }
+        .myGallery {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .myGallery img {
+        width: 100%;
+        }
+        .new-style, .new-detail-img{
+        border: 1px solid; background-color: #fff;
+        margin-bottom: 10px;
+        }
+        .primary{
+            background-color: #09a9ed;
+        }
+        .reset{
+            background-color: #fcba03;
+        }
+       
+        .primary, .reset{
+            border: none;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 4px;
+        }
+        .map{
+            color:#10542e;
+        }
+        .phone{
+            color: #fcba03;
+        }
+        .fax{
+            color: #eb5c1a;
+        }
+        .envelope{
+            color:#de2f40;
+        }
+        .map, .phone,.fax, .envelope{
+            font-size: 25px!important;
+        }
+    </style>
 </head>
 
 <body id="top">
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
-    <div class="wrapper row0" style="background-color: #EEEEEE;">
+    <div class="wrapper row0" style="background-color: #f9faf2">
         <div id="topbar" class="hoc clear">
             <div class="fl_left">
                 <ul class="inline nospace pushright">
-                    <li><i class="fa fa-phone"></i> +951- 650712</li>
-                    <li><i class="fa fa-envelope-o"></i> admin@itbmu.org.mm</li>
+                    <li><i class="fa fa-phone phone"></i> +951- 650712</li>
+                    <li><i class="fa fa-envelope-o envelope"></i> admin@itbmu.org.mm</li>
                 </ul>
             </div>
             <div class="fl_right">
                 <ul class="inline nospace">
-                    <li><a href="index.html" style="color:#000000;"><i class="fa fa-home" style="font-size:24px"></i><strong>Home</strong></a></li>
-                    <li><a style="color:#000000;"> | </a></li>
-                    <li><a href="pages/contactus.html" style="color:#000000;"><i class="fa fa-address-card" style="font-size:20px"></i><strong>Contact Us</strong></a></li>
-                    <li><a style="color:#000000;"> | </a></li>
-                    <li><a href="pages/feedback.html" style="color:#000000;"><i class="fa fa-comment" style="font-size:24px"></i><strong>Feedback</strong></a></li>
+                    <li><a href="{{route('home')}}" style="color:#f57db1"><i class="fa fa-home" style="font-size:24px"></i><strong>Home</strong></a></li>
+                    <li><a style="color:#f57db1"> | </a></li>
+                    <li><a href="{{route('contact-us')}}" style="color:#f57db1"><i class="fa fa-address-card" style="font-size:20px"></i><strong>Contact Us</strong></a></li>
+                    <li><a style="color:#f57db1"> | </a></li>
+                    <li><a href="{{route('feedback')}}" style="color:#f57db1"><i class="fa fa-comment" style="font-size:24px"></i><strong>Feedback</strong></a></li>
 
                 </ul>
             </div>
@@ -56,7 +153,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <!-- ################################################################################################ -->
             <div id="logo" class="fl_left">
                 <h1>
-                    <a href="index.html"><img src="images/adminlogonew1.png"></a>
+                    <a href="{{route('home')}}"><img src="images/adminlogonew1.png"></a>
                 </h1>
             </div>
 
@@ -168,15 +265,15 @@ Licence URI: https://www.os-templates.com/template-terms
                 <div class="one_third first">
                     <h6 class="title">Address</h6>
                     <ul class="nospace btmspace-30 linklist contact">
-                        <li><i class="fa fa-map-marker"></i>
+                        <li><i class="fa fa-map-marker map"></i>
                             <address>
             Dhammapāla Hill, Mayanggone P.O,
             Yangon, Myanmar.
           </address>
                         </li>
-                        <li><i class="fa fa-phone"></i> +951- 650712</li>
-                        <li><i class="fa fa-fax"></i> 095-1650700</li>
-                        <li><i class="fa fa-envelope-o"></i> admin@itbmu.org.mm</li>
+                        <li><i class="fa fa-phone phone"></i> +951- 650712</li>
+                        <li><i class="fa fa-fax fax"></i> 095-1650700</li>
+                        <li><i class="fa fa-envelope-o envelope"></i> admin@itbmu.org.mm</li>
                     </ul>
 
                 </div>
@@ -194,7 +291,7 @@ Licence URI: https://www.os-templates.com/template-terms
                             <legend>Newsletter:</legend>
                             <input class="btmspace-15" type="text" value="" placeholder="Name">
                             <input class="btmspace-15" type="text" value="" placeholder="Email">
-                            <button type="submit" value="submit">Submit</button>
+                            <button type="submit" value="submit" class="reset">Submit</button>
                         </fieldset>
                     </form>
                 </div>

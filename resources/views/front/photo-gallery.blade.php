@@ -7,7 +7,7 @@
       <!-- ################################################################################################ -->
       <div class="content">
         <!-- ################################################################################################ -->
-        <div id="gallery">
+        {{-- <div id="gallery">
           <figure>
             <h1 class="heading" align="center">ITBMU Photo Gallery</h1>
               @foreach($galleries as $gallery)
@@ -18,9 +18,28 @@
                       </div></li>
                 </ul>
               @endforeach
-              {{-- <figcaption>Gallery Description Goes Here</figcaption> --}}
+            
           </figure>
-        </div>
+        </div> --}}
+        <h1 class="heading" align="center" id="gallery-heading">Photo Gallery</h1>
+            <div class="myGallery">
+             
+              @foreach ($galleries as $gallery)
+                @if(!empty(unserialize($gallery->photo)))
+                  @foreach (unserialize($gallery->photo) as $photo)
+                    <div class="item">
+                      <img src="{{asset('storage/gallery/images/'.$photo)}}" class="new-style"/>
+                      <span class="caption">{{$gallery->titleid}}</span>
+                    </div>
+                  @endforeach
+                @else
+                  <div class="item">
+                    <img src="{{asset('images/itbmu.jpg')}}" >
+                  </div>
+                @endif
+              @endforeach
+            
+            </div>
         <!-- ################################################################################################ -->
         <!-- ################################################################################################ -->
         <nav class="pagination">

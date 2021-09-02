@@ -42,7 +42,20 @@
                             </td>
 
                             <td class="justify-center px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                <img src="{{asset('gallery/images/'.$gallery->photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
+                                {{-- <img src="{{asset('gallery/images/'.$gallery->photo)}}" class="object-center w-16 h-16 mx-auto rounded-md"> --}}
+                                <div class="myGallery">
+                                  
+                                    @if(!empty(unserialize($gallery->photo)))
+                                      @foreach (unserialize($gallery->photo) as $photo)
+                                        <div class="item">
+                                          <img src="{{asset('storage/gallery/images/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md"/>
+                                        </div>
+                                      @endforeach
+                                    @else
+                                      <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
+                                    @endif
+                                  
+                                </div>
                             </td>
 
                             <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">

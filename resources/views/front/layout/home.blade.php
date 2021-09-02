@@ -73,27 +73,36 @@
                                 <tbody>
                                     @foreach ($news as $new)
 
+                                        <div>
+                                            <tr>
+                                                <td>
+                                                    @if(!empty($new->photo))
+                                                    <div class="text-center">
+                                                        <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
+                                                            <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+                                                            @else
+                                                        
+                                                            <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
+                                                        </a>
+                                                    </div>
+                                                    
+                                                    @endif
+                                                </td>
+                                                <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $new->newstitleeng), 100) }}</td>
 
-                                <div>
-                                    <tr>
-                                        <td>
-                                            <img class="borderedbox" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}" width="100px" height="100px">
-                                        </td>
-                                        <td colspan="3">{{ $new->newstitleeng }}</td>
+                                            </tr>
+                                            <tr style="text-align: center;">
+                                                <td class="secondary"><i class="far fa-user"> Admin</i> </td>
+                                                <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
+                                                <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$new->id) }}">Show More </a></i></td>
 
-                                    </tr>
-                                    <tr style="text-align: center;">
-                                        <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                                        <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
-                                        <td class="secondary"><i class="fas fa-plus-circle"> <a href="pages/newdetail.html">Show More </a></i></td>
-
-                                    </tr>
-                                </div>
-                                @endforeach
+                                            </tr>
+                                        </div>
+                                    @endforeach
 
                                 </tbody>
                             </table>
-                            <nav class="pagination">
+                            {{-- <nav class="pagination">
                                 <ul>
                                     <li><a href="#">&laquo; Previous</a></li>
                                     <li><a href="#">1</a></li>
@@ -101,7 +110,7 @@
 
                                     <li><a href="#">Next &raquo;</a></li>
                                 </ul>
-                            </nav>
+                            </nav> --}}
                         </div>
                     </div>
                 </div>
@@ -111,34 +120,38 @@
                         <div class="p-3 border-bottom">
                             <table>
                                 <tbody>
-                                    {{-- @foreach ($announcements as $ann) --}}
+                                    @foreach ($announcements as $ann)
                                     <div>
                                         <tr>
-                                            <td><a href="{{ asset('/theannouncement.pdf') }}" target="_Black">
-                                                <img src="images/The Announcement.jpg" class="borderedbox" width="100px" height="100px">
-                                                {{-- <img class="gallery-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}" width="100px" height="100px"> --}}
-                                            </a>
+                                            <td>
+                                                @if(!empty($ann->photo))
+                                                <div class="text-center">
+                                                    <a href="{{asset('storage/news/'.$ann->pdf)}}" target="_Black">
+                                                        <img class="default-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}">
+                                                        @else
+                                                    
+                                                        <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
+                                                    </a>
+                                                </div>
+                                                
+                                                @endif
                                             </td>
-                                            {{-- <td>
-                                                <img class="gallery-img" src="{{asset('storage/news/images/'.$photo)}}" width="100px" height="100px">
-
-                                            </td> --}}
-                                            <td colspan="3">The Announcement for 2021</td>
+                                            <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $ann->newstitleeng), 100) }}</td>
 
                                         </tr>
                                         <tr style="text-align: center;">
                                             <td class="secondary"><i class="far fa-user"> Admin</i> </td>
                                             <td class="secondary"><i class="far fa-calendar-alt"> 01/04/2021</i></td>
-                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/1') }}">Show More </a></i></td>
+                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$ann->id) }}">Show More </a></i></td>
 
                                         </tr>
                                     </div>
-                                    {{-- @endforeach --}}
+                                    @endforeach
 
 
                                 </tbody>
                             </table>
-                            <nav class="pagination">
+                            {{-- <nav class="pagination">
                                 <ul>
                                     <li><a href="#">&laquo; Previous</a></li>
                                     <li><a href="#">1</a></li>
@@ -146,7 +159,7 @@
 
                                     <li><a href="#">Next &raquo;</a></li>
                                 </ul>
-                            </nav>
+                            </nav> --}}
                         </div>
                     </div>
                 </div>
@@ -155,3 +168,6 @@
     </main>
 </div>
 @endsection
+
+
+{{-- //အပြည်ပြည်ဆိုင်ရာ ထေရဝါဒ ဗုဒ္ဓသာသနာပြု တက္ကသိုလ်ဥပဒေ --}}

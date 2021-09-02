@@ -1,71 +1,48 @@
 @extends('front.layout.base')
   @section('content')
+  <style>
+
+  </style>
   <div class="wrapper row3">
-    <style>
-      #new-detail{
-        height: 300px;
-      }
-    </style>
       <main class="container hoc clear">
-          <!-- main body -->
-          <!-- ################################################################################################ -->
+         
           <div class="content">
-            <!-- ################################################################################################ -->
-            <h1>{{ $new->newstitleeng }}</h1>
-            <div id="new-detail">
-                <img class="imgl borderedbox inspace-5" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}" width="150px" height="150px">
-              <p>{{ $new->newseng }}</p>
+            <div class="row">
+                <h1>{{ $new->newstitleeng }}</h1>
+                @if(!empty($new->photo))
+                <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
+                  <img class="new-detail-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}" width="150px" height="150px" alt="">
+                @else
+                  <img class="new-detail-img" src="{{asset('images/itbmu.jpg')}}" width="150px" height="150px">
+                </a>
+                @endif
+              <p class="new-detail-para">{{ $new->newseng }}</p><br>
             </div>
-
-            <div id="gallery">
-              <figure>
-                <h1 class="heading" align="center">Photo Gallery</h1>
-
-                    <ul class="nospace clear">
-                        {{-- @dd(unserialize($new->photo)) --}}
-                        @foreach (unserialize($new->photo) as $photo)
-
-                        <li class="one_quarter gallery" >
-                            <img class="gallery-img" src="{{asset('storage/news/'.$photo)}}">
-                        </li>
-                        @endforeach
-
-                          {{-- <div id="gallery-div">
-                            <img class="gallery-img" src="{{asset('storage/news/images/'.$new->photo2)}}"  alt="" >
-                          </div>
-                          <li class="one_quarter gallery">
-                            <div id="gallery-div">
-                              <img class="gallery-img" src="{{asset('news/images/'.$new->photo3)}}"  alt="" >
-                            </div>
-                          </li>
-                          <li class="one_quarter gallery">
-                            <div id="gallery-div">
-                              <img class="gallery-img" src="{{asset('news/images/'.$new->photo4)}}"  alt="" >
-                            </div>
-                          </li>
-                          <li class="one_quarter gallery">
-                            <div id="gallery-div">
-                              <img class="gallery-img" src="{{asset('news/images/'.$new->photo5)}}"  alt="" >
-                            </div>
-                          </li> --}}
-
-
-
-                    </ul>
-              </figure>
+            <h1 class="heading" align="center" id="gallery-heading">Photo Gallery</h1>
+            <div class="myGallery">
+               {{-- <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black"> --}}
+              @if(!empty(unserialize($new->photo)))
+             
+                  @foreach (unserialize($new->photo) as $photo)
+                    <div class="item">
+                      <img src="{{asset('storage/news/'.$photo)}}" class="new-style"/>
+                     
+                    </div>
+                  @endforeach
+                @else
+                <div class="item">
+                  <img src="{{asset('images/itbmu.jpg')}}" >
+                </div>
+           
+              @endif
+               {{-- </a> --}}
             </div>
-
-
+         
             <!-- ################################################################################################ -->
           </div>
           <!-- ################################################################################################ -->
           <!-- / main body -->
           <div class="clear"></div>
-        </main>
+      </main>
     </div>
   @endsection
-
-  {{-- @extends('front.layout.base')
-  @section('content')
-
-  @endsection --}}

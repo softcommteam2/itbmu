@@ -56,6 +56,8 @@ Route::get('/',[MainController::class, 'home'])->name('home');
 Route::get('/home',[MainController::class, 'home'])->name('home');
 Route::get('/photo-gallereries',[MainController::class, 'gallery'])->name('photo-gallery');        //University Activities
 Route::get('/faqs',[MainController::class, 'faq'])->name('faq');
+Route::get('/contact-us',[MainController::class,'contact_us'])->name('contact-us');
+route::get('/feedback',[MainController::class, 'feedback'])->name('feedback');
 //-------------------------End Other Menu Tab---------------------------------//
 
 

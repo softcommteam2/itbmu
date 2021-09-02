@@ -32,6 +32,7 @@
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Photo
                       </th>
+                      <td>pdf</td>
                       <th class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase bg-gray-50">
                       Actions
                       </th>
@@ -53,13 +54,25 @@
 
                             <time>{{ date('d-m-Y', strtotime($new->upcomedate)) }}</time>
                             </td>
-                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
-                                {{-- @dd($new->photo) --}}
-                                @foreach (unserialize($new->photo) as $photo)
-                                <img src="{{asset('storage/news/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md">
-                                @endforeach
+                            <td class="px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap w-1/4">
+                              
+                                <div class="myGallery">
+                                    @if(!empty(unserialize($new->photo)))
+                                      @foreach (unserialize($new->photo) as $photo)
+                                        <div class="item">
+                                          <img src="{{asset('storage/news/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md"/>
+                                          {{-- <span class="caption">{{$new->label}}</span> --}}
+                                        </div>
+                                      @endforeach
+                                    @else
+                                      <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
+                                    @endif
+                                  
+                                </div>
                             </td>
-
+                            <td>
+                                <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">pdf</a>
+                            </td>
                             <td class="px-6 py-4 text-sm text-right text-gray-500 whitespace-nowrap">
                                 <a href="{{ url('admin/news/'.$new->id.'/edit') }}" type="submit" class="items-center p-3 text-sm font-medium text-blue-600 capitalize bg-blue-200 rounded-md">
                                     Edit

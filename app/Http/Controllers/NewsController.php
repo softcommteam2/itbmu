@@ -8,8 +8,9 @@ class NewsController extends Controller
 {
 
     public function index()
-    {
+    {   
         $news = News::all();
+        // dd($news);
         return view('admin.news.index', compact('news'));
     }
 
@@ -27,10 +28,10 @@ class NewsController extends Controller
             'newsmyan' => 'required',
             'newseng' => 'required',
             'upcomedate' => 'required',
-            'type' => 'required',
-            'photo'=> 'required'
+            'type' => 'required'
         ]);
         $photos = [];
+        if(!empty($request->file('photo'))){
             foreach($request->file('photo') as $photo)
             {
                 $file_name =time().'.'.$photo->getClientOriginalName();
@@ -40,8 +41,13 @@ class NewsController extends Controller
             }
        $photo_names = serialize($photos);
        $data['photo']= $photo_names;
+        }
+        if(!empty($request->file('pdf'))){
+        $pdf =time().'.'.$request->pdf->getClientOriginalName();
+        $request->pdf->storeAs('news',$pdf);
+        $data['pdf']=$pdf;
+        }
         News::create($data);
-
         return redirect('admin/news');
     }
 
@@ -60,7 +66,32 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $new = News::findOrFail($id);
-        $new->update($request->all());
+        $data= $request->validate([
+            'newstitlemyan' => 'required',
+            'newstitleeng' => 'required',
+            'newsmyan' => 'required',
+            'newseng' => 'required',
+            'upcomedate' => 'required',
+            'type' => 'required'
+        ]);
+        $photos = [];
+        if(!empty($request->file('photo'))){
+            foreach($request->file('photo') as $photo)
+            {
+                $file_name =time().'.'.$photo->getClientOriginalName();
+                array_push($photos,$file_name);
+                $photo->storeAs('news',$file_name);
+                // $data['photo']=serialize($file_name);
+            }
+       $photo_names = serialize($photos);
+       $data['photo']= $photo_names;
+        }
+        if(!empty($request->file('pdf'))){
+        $pdf =time().'.'.$request->pdf->getClientOriginalName();
+        $request->pdf->storeAs('news',$pdf);
+        $data['pdf']=$pdf;
+        }
+         $new->update($data);
         return redirect('admin/news');
     }
 

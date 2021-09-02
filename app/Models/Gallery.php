@@ -17,5 +17,10 @@ class Gallery extends Model
         return $this->belongsTo('App\Models\ActivityTitle','titleid')->withDefault();
     }
 
+    public static function gallery($value)
+    {
+        $attrs[$value->titleid][] = $value->titleid;
+        return $attrs;
+    }
     
 }

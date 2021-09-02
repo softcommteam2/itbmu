@@ -26,15 +26,26 @@ class GalleryController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'photo' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:20480',
+        $data= $request->validate([
+            'titleid' => 'required',
+            // 'photo' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:20480',
+            'label' => 'required'
         ]);
-        $gallery = new Gallery();
-        $gallery->titleid = $request->titleid;
-        $gallery->photo =time().'.'.$request->photo->extension();
-        $request->photo->move(public_path('gallery/images'), $gallery->photo);
-        $gallery->label = $request->label;
-        $gallery->save();
+        $photos = [];
+       
+        if(!empty($request->file('photo'))){
+            foreach($request->file('photo') as $photo)
+            {
+                $file_name =time().'.'.$photo->getClientOriginalName();
+                array_push($photos,$file_name);
+                $photo->storeAs('gallery/images',$file_name);
+                // $data['photo']=serialize($file_name);
+            }
+       $photo_names = serialize($photos);
+       $data['photo']= $photo_names;
+        }
+        
+        Gallery::create($data);
         return redirect('admin/galleries');
     }
 
@@ -45,12 +56,36 @@ class GalleryController extends Controller
 
     public function edit($id)
     {
-        //
+        $gallery = Gallery::findOrFail($id);
+        $act_titles = ActivityTitle::all();
+        return view('admin.photo-gallery.create-edit', compact('gallery','act_titles'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $galleries = Gallery::findOrFail($id);
+        // $act_titles = ActivityTitle::all();
+        $data= $request->validate([
+            'titleid' => 'required',
+            // 'photo' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:20480',
+            'label' => 'required'
+        ]);
+        $photos = [];
+       
+        if(!empty($request->file('photo'))){
+            foreach($request->file('photo') as $photo)
+            {
+                $file_name =time().'.'.$photo->getClientOriginalName();
+                array_push($photos,$file_name);
+                $photo->storeAs('gallery/images',$file_name);
+                // $data['photo']=serialize($file_name);
+            }
+       $photo_names = serialize($photos);
+       $data['photo']= $photo_names;
+        }
+        
+       $galleries->update($data);
+        return redirect('admin/galleries');
     }
 
 

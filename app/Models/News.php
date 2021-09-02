@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model
 {
     use HasFactory;
-    protected $fillable= ['newstitleeng','newstitlemyan','newseng','newsmyan','upcomedate','type','photo'];
+    protected $fillable= ['newstitleeng','newstitlemyan','newseng','newsmyan','upcomedate','type','photo', 'pdf'];
 
     public static function first_photo($new)
     {

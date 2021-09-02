@@ -9,32 +9,38 @@
       <!-- ################################################################################################ -->
       <h1 align="center">News & Events</h1>
             <p>
+              @foreach ($news as $new)
         <table>
           <tbody>
-            @foreach ($news as $new)
-              <tr style="border: 0px solid;background-color: #fff;">
-                {{-- <td rowspan="3" width="160px" ><img src="{{asset('storage/news/images/'.$new->photo)}}" style="width:150px; height:150px;background-color: #fff;"></td> --}}
-                <td rowspan="3" width="160px" >
-                @foreach (unserialize($new->photo) as $photo)
-                    <img src="{{asset('storage/news/'.$photo)}}" width="100px" height="82px">
-                @endforeach
+           
+              <tr>
+              
+                <td rowspan="3" width="160px">
+              @if(!empty(unserialize($new->photo)))
+              <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
+              <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+              @else
+                <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
+              </a>
+              @endif
                 </td>
-                <td colspan="3" style="border: 0px solid;background-color: #fff;"><strong>{{ $new->newstitleeng }}</strong></td>
+                <td colspan="3"><strong>{{ $new->newstitleeng }}</strong></td>
               </tr>
-              <tr style="border: 0px solid;background-color: #fff;">
-                <td style="border: 0px solid;background-color: #fff;"><strong>{{ $new->newsmyan }} </strong></td>
-                <td style="border: 0px solid;background-color: #fff;"><strong>၁၃၈၁-ခုနှစ် တပို့တွဲ-တပေါင်း </strong></td>
-                <td style="border: 0px solid;background-color: #fff;"><strong>{{ $new->upcomedate }}</strong></td>
+              <tr>
+                <td><strong>{{ Illuminate\Support\Str::limit(strip_tags( $new->newsmyan), 150) }} </strong></td>
+                <td><strong>၁၃၈၁-ခုနှစ် တပို့တွဲ-တပေါင်း </strong></td>
+                <td><strong>{{ $new->upcomedate }}</strong></td>
               </tr>
-              <tr style="border: 0px solid;background-color: #fff;">
+              <tr>
 
-                <td colspan="3" style="border: 0px solid;background-color: #fff;" align="right"> <p class="nospace"><a href="{{ url('event-detail/'.$new->id) }}">Read More &raquo;</a></p></td>
+                <td colspan="3" align="right"> <p class="nospace"><a href="{{ url('event-detail/'.$new->id) }}">Read More &raquo;</a></p></td>
               </tr>
-            @endforeach
-
+           
           </tbody>
         </table>
+        @endforeach
       </p>
+
 
       <!-- ################################################################################################ -->
 
@@ -55,7 +61,3 @@
 </div>
 @endsection
 
-{{-- @extends('front.layout.base')
-@section('content')
-
-@endsection --}}
