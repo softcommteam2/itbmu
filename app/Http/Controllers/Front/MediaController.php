@@ -5,20 +5,20 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{News,Multimedia};
-
+use Illuminate\Pagination\Paginator;
 class MediaController extends Controller
 {
     public function news()
     {
-       $news = News::all();
-
+       $news = News::paginate(5);
+    //    $currentPage = LengthAwarePaginator::resolveCurrentPage();
         return view('front.news',compact('news'));
     }
     public function new_details($id)
     {
        $new = News::findOrFail($id);
 
-        return view('front.news-detail',compact('new'));
+        return view('front.announcement_details',compact('new'));
     }
     public function magazine()
     {

@@ -16,7 +16,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="h-screen font-sans antialiased leading-none bg-gray-100">
+<body class="h-screen font-sans antialiased leading-none bg-gray-200">
     @yield('content')  
 </body>
 </html>

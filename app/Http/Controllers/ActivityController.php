@@ -10,7 +10,7 @@ class ActivityController extends Controller
 
     public function index()
     {
-        $act_titles =ActivityTitle::all();
+        $act_titles =ActivityTitle::paginate(5);
         return view('admin.activity-titles.index', compact('act_titles'));
     }
 

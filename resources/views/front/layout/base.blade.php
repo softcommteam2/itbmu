@@ -15,6 +15,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="{{ asset('layout/styles/layout.css') }}" rel="stylesheet" type="text/css" media="all">
     <link href="{{ asset('layout/styles/custom.flexslider.css') }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ asset('layout/styles/style.css') }}" rel="stylesheet" type="text/css" media="all">
     <script src="https://kit.fontawesome.com/08bf8f3019.js" crossorigin="anonymous"></script>
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
 
@@ -109,7 +110,7 @@ Licence URI: https://www.os-templates.com/template-terms
             color:#10542e;
         }
         .phone{
-            color: #fcba03;
+            color: #DFC409;
         }
         .fax{
             color: #eb5c1a;
@@ -120,6 +121,86 @@ Licence URI: https://www.os-templates.com/template-terms
         .map, .phone,.fax, .envelope{
             font-size: 25px!important;
         }
+        .home-font{
+            color:#000;
+            margin-left:3px;
+        }
+        .custom-theme-color{
+            background-color:#ffdf00;
+        }
+        .custom-theme-color,#show-more{
+            color:#354230;
+        }
+        .new-detail-img{
+            width: 150px;
+            height: 150px;
+        }
+
+        .view-all{
+            margin:10px 0px;
+            float:right;
+            clear:both;
+            background-color: #003399;
+            padding:10px;
+            border-radius: 8px;
+            border:solid 2px #ffdf00;
+            color:#f4f0ec;
+            cursor: pointer;
+        }
+/* -----------------------------Set-up dropdown--------------------------- */
+        .dropbtn {
+                background-color: #ffdf00;
+                color: #354230;
+                padding: 12px;
+                font-size: 16px;
+                text-align: left;
+                border: none;
+                cursor: pointer;
+                min-width: 400px;
+            }
+            /* Dropdown button on hover & focus */
+
+            .dropbtn:hover,
+            .dropbtn:focus {
+                background-color: #ffcc33;
+            }
+            /* The container <div> - needed to position the dropdown content */
+
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            /* Dropdown Content (Hidden by Default) */
+
+            .dropdown-content {
+                display: none;
+                position: relative;
+                background-color: #f9f9f9;
+                min-width: 400px;
+                /*160px*/
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            }
+            /* Links inside the dropdown */
+
+            .dropdown-content a {
+                color: black;
+                padding: 10px 14px;
+                text-decoration: none;
+                display: block;
+            }
+            /* Change color of dropdown links on hover */
+
+            .dropdown-content a:hover {
+                background-color: #f1f1f1
+            }
+            /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+
+            .show {
+                display: block;
+            }
+            #pagination{
+                border:1px solid #DFC409;
+            }
     </style>
 </head>
 
@@ -131,17 +212,17 @@ Licence URI: https://www.os-templates.com/template-terms
         <div id="topbar" class="hoc clear">
             <div class="fl_left">
                 <ul class="inline nospace pushright">
-                    <li><i class="fa fa-phone phone"></i> +951- 650712</li>
-                    <li><i class="fa fa-envelope-o envelope"></i> admin@itbmu.org.mm</li>
+                    <li><i class="fa fa-phone phone"></i><b> +951- 650712</b></li>
+                    <li><i class="fa fa-envelope-o phone"></i> <b>admin@itbmu.org.mm</b></li>
                 </ul>
             </div>
             <div class="fl_right">
                 <ul class="inline nospace">
-                    <li><a href="{{route('home')}}" style="color:#f57db1"><i class="fa fa-home" style="font-size:24px"></i><strong>Home</strong></a></li>
-                    <li><a style="color:#f57db1"> | </a></li>
-                    <li><a href="{{route('contact-us')}}" style="color:#f57db1"><i class="fa fa-address-card" style="font-size:20px"></i><strong>Contact Us</strong></a></li>
-                    <li><a style="color:#f57db1"> | </a></li>
-                    <li><a href="{{route('feedback')}}" style="color:#f57db1"><i class="fa fa-comment" style="font-size:24px"></i><strong>Feedback</strong></a></li>
+                    <li><a href="{{route('home')}}"><i class="fa fa-home phone" style="font-size:24px"></i><strong class="home-font">Home</strong></a></li>
+                    <li><a class="phone"> | </a></li>
+                    <li><a href="{{route('contact-us')}}"><i class="fa fa-address-card phone" style="font-size:20px"></i><strong class="home-font">Contact Us</strong></a></li>
+                    <li><a class="phone"> | </a></li>
+                    <li><a href="{{route('feedback')}}"><i class="fa fa-comment phone" style="font-size:24px"></i><strong class="home-font">Feedback</strong></a></li>
 
                 </ul>
             </div>
@@ -163,8 +244,8 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
-    <div class="wrapper row2">
-        <nav id="mainav" class="hoc clear">
+    <div class="wrapper row2 custom-theme-color">
+        <nav id="mainav" class="hoc clear ">
             <!-- ################################################################################################ -->
             <ul class="clear">
                 <li class="active"><a href="{{route('home')}}">Home</a></li>
@@ -267,22 +348,17 @@ Licence URI: https://www.os-templates.com/template-terms
                     <ul class="nospace btmspace-30 linklist contact">
                         <li><i class="fa fa-map-marker map"></i>
                             <address>
-            Dhammapāla Hill, Mayanggone P.O,
-            Yangon, Myanmar.
-          </address>
+                                Dhammapāla Hill, Mayanggone P.O,
+                                Yangon, Myanmar.
+                            </address>
                         </li>
                         <li><i class="fa fa-phone phone"></i> +951- 650712</li>
                         <li><i class="fa fa-fax fax"></i> 095-1650700</li>
                         <li><i class="fa fa-envelope-o envelope"></i> admin@itbmu.org.mm</li>
                     </ul>
-
-                </div>
-                <div class="one_third">
-                    <h6 class="title">Map</h6>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15272.588246782298!2d96.1566785!3d16.8686182!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1947ecf881973%3A0x5c7dc24a82aff1b8!2sInternational+Theravada+Buddhist+Missionary+University!5e0!3m2!1sen!2smm!4v1467005451834"
                         width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
-
                 <div class="one_third">
                     <h6 class="title">NEWSLETTER</h6>
                     <p class="nospace btmspace-15">Subscribe To Our Newsletter:</p>
@@ -294,6 +370,14 @@ Licence URI: https://www.os-templates.com/template-terms
                             <button type="submit" value="submit" class="reset">Submit</button>
                         </fieldset>
                     </form>
+                </div>
+                <div class="one_third">
+                    <h6 class="title">Visitors</h6>
+                    <!-- BEGIN: Powered by Supercounters.com -->
+                    <center><script type="text/javascript" src="//widget.supercounters.com/ssl/flag.js"></script><script type="text/javascript">sc_flag(1619650,"ffffff","000000","cccccc",3,20,0,0)</script><br><noscript><a href="http://www.supercounters.com/">Flag Counter</a></noscript>
+                    </center>
+                    <!-- END: Powered by Supercounters.com -->
+
                 </div>
                 <!-- ################################################################################################ -->
             </footer>

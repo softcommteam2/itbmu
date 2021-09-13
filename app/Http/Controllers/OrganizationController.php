@@ -10,7 +10,7 @@ class OrganizationController extends Controller
 
     public function index()
     {
-        $organizations = Organization::all();
+        $organizations = Organization::paginate(5);
         return view('admin.organizations.index', compact('organizations'));
     }
 

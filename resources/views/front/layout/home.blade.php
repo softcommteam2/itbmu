@@ -13,7 +13,7 @@
             <li><img src="data1/images/3.jpg" alt="3" id="wows1_7" /></li>
         </ul>
     </div>
-    <div class="ws_bullets">
+    <div class="ws_bullets" >
         <div>
             <a href="#" title="s1"><span><img src="data1/tooltips/s1.png" alt="s1"/>1</span></a>
             <a href="#" title="s2"><span><img src="data1/tooltips/s2.png" alt="s2"/>2</span></a>
@@ -71,20 +71,39 @@
                         <div class="p-3 border-bottom scrollable">
                             <table>
                                 <tbody>
-                                    @foreach ($news as $new)
+                                    @foreach ($news->take(5) as $new)
 
                                         <div>
                                             <tr>
                                                 <td>
                                                     @if(!empty($new->photo))
-                                                    <div class="text-center">
-                                                        <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
-                                                            <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
-                                                            @else
-                                                        
-                                                            <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
-                                                        </a>
-                                                    </div>
+                                                        @if(!empty($new->pdf))
+                                                            <div class="text-center">
+                                                                <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
+                                                                    <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+                                                                </a>
+                                                            </div>
+                                                        @else
+                                                            <div class="text-center">
+                                                                <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
+                                                                    <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+                                                                </a>
+                                                            </div>
+                                                        @endif
+                                                    @else
+                                                        @if(empty($new->pdf))
+                                                            <div class="text-center">
+                                                                <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
+                                                                    <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
+                                                                </a>
+                                                            </div>
+                                                        @else
+                                                            <div class="text-center">
+                                                                <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
+                                                                    <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
+                                                                </a>
+                                                            </div>
+                                                        @endif
                                                     
                                                     @endif
                                                 </td>
@@ -94,7 +113,7 @@
                                             <tr style="text-align: center;">
                                                 <td class="secondary"><i class="far fa-user"> Admin</i> </td>
                                                 <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
-                                                <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$new->id) }}">Show More </a></i></td>
+                                                <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$new->id) }}" id="show-more">Show More </a></i></td>
 
                                             </tr>
                                         </div>
@@ -120,19 +139,38 @@
                         <div class="p-3 border-bottom">
                             <table>
                                 <tbody>
-                                    @foreach ($announcements as $ann)
+                                    @foreach ($announcements->take(5) as $ann)
                                     <div>
                                         <tr>
                                             <td>
                                                 @if(!empty($ann->photo))
-                                                <div class="text-center">
-                                                    <a href="{{asset('storage/news/'.$ann->pdf)}}" target="_Black">
-                                                        <img class="default-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}">
-                                                        @else
-                                                    
-                                                        <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
-                                                    </a>
-                                                </div>
+                                                    @if(!empty($ann->pdf))
+                                                        <div class="text-center">
+                                                            <a href="{{asset('storage/news/'.$ann->pdf)}}" target="_Black">
+                                                                <img class="default-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}">
+                                                            </a>
+                                                        </div>
+                                                    @else
+                                                        <div class="text-center">
+                                                            <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
+                                                                <img class="default-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}">
+                                                            </a>
+                                                        </div>
+                                                    @endif
+                                                @else
+                                                    @if(empty($ann->pdf))
+                                                        <div class="text-center">
+                                                            <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
+                                                                <img class="default-img"  src="{{asset('images/itbmu-announcement.jpg')}}" >
+                                                            </a>
+                                                        </div>
+                                                    @else
+                                                        <div class="text-center">
+                                                            <a href="{{asset('storage/news/'.$ann->pdf)}}" target="_Black">
+                                                                <img class="default-img"  src="{{asset('images/itbmu-announcement.jpg')}}" >
+                                                            </a>
+                                                        </div>
+                                                    @endif
                                                 
                                                 @endif
                                             </td>
@@ -142,7 +180,7 @@
                                         <tr style="text-align: center;">
                                             <td class="secondary"><i class="far fa-user"> Admin</i> </td>
                                             <td class="secondary"><i class="far fa-calendar-alt"> 01/04/2021</i></td>
-                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$ann->id) }}">Show More </a></i></td>
+                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$ann->id) }}" id="show-more">Show More </a></i></td>
 
                                         </tr>
                                     </div>
@@ -162,6 +200,11 @@
                             </nav> --}}
                         </div>
                     </div>
+                </div>
+                <div >
+                    <a href="{{route('new')}}" target="_blank">
+                        <button class="view-all"> View All news & Announcements</button>
+                    </a>
                 </div>
             </div>
         </div>

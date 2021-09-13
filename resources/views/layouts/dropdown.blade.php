@@ -34,13 +34,13 @@
                     <!-- This example requires Tailwind CSS v2.0+ -->
         <div class="relative inline-block text-left">
             <div class="relative inline-flex rounded-md shadow-sm">
-                <button class="relative inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white bg-blue-500 border border-gray-300 cursor-pointer rounded-l-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-blue active:bg-indigo-700">
+                <button class="relative inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white bg-blue-600 border border-gray-300 cursor-pointer rounded-l-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-blue active:bg-indigo-700">
                   Account Setting
                 </button>
 
 
               <span x-data="{ isopen: false }" class="relative block -ml-px">
-                <button @click="isopen = !isopen" type="button" class="relative inline-flex items-center px-2 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-white bg-blue-500 border border-gray-300 rounded-r-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-blue active:bg-indigo-700" aria-label="Expand">
+                <button @click="isopen = !isopen" type="button" class="relative inline-flex items-center px-2 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-white bg-blue-600 border border-gray-300 rounded-r-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-blue active:bg-indigo-700" aria-label="Expand">
                   <!-- Heroicon name: chevron-down -->
                   <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -69,7 +69,7 @@
                             </a>
                       <div class="border-t border-gray-100">             </div>
 
-                        <a href="{{ route('logout') }}" class="flex items-center px-4 py-2 text-sm text-gray-700 group" role="menuitem" tabindex="-1" id="menu-item-0" onclick="event.preventDefault();
+                        <a href="{{ route('logout') }}" class="flex items-center px-4 py-2 text-sm text-gray-900 group" role="menuitem" tabindex="-1" id="menu-item-0" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
 
                             <!-- Heroicon name: solid/pencil-alt -->

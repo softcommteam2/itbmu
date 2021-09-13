@@ -17,7 +17,7 @@ class MainController extends Controller
     }
     public function gallery()
     {
-        $galleries = Gallery::all();       
+        $galleries = Gallery::paginate(5);       
         return view('front.photo-gallery', compact('galleries'));
     }
     public function faq()

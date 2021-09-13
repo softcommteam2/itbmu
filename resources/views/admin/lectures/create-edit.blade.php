@@ -5,7 +5,7 @@
 @if(empty($lecture->id))
     <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/lectures') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
+        <div class="space-y-8 divide-y divide-gray-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
 
@@ -16,7 +16,7 @@
     <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/lectures/'.$lecture->id) }}" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
-        <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
+        <div class="space-y-8 divide-y divide-gray-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
                         <h2 class="text-xl font-bold leading-8 text-gray-900">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="p-3 space-y-6 border sm:space-y-5">
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        <label for="name" class="block text-sm font-medium text-gray-900 sm:mt-px sm:pt-2 text-right mr-8">
                         Name
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        <label for="email" class="block text-sm font-medium text-gray-900 sm:mt-px sm:pt-2 text-right mr-8">
                         Email
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="address" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        <label for="address" class="block text-sm font-medium text-gray-900 sm:mt-px sm:pt-2 text-right mr-8">
                         Address
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="phone" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        <label for="phone" class="block text-sm font-medium text-gray-900 sm:mt-px sm:pt-2 text-right mr-8">
                         Phone
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
@@ -61,7 +61,7 @@
 
                     <!--------------- Select Box
                     {{-- <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="subject_id" class="block text-sm font-medium text-gray-700">Subject</label>
+                        <label for="subject_id" class="block text-sm font-medium text-gray-900">Subject</label>
                         <select id="subject_id" name="subject_id" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                           <option >Choose Subject</option>
                          @foreach ($subjects as $subject)
@@ -75,7 +75,7 @@
 
         <div class="pt-5">
             <div class="flex justify-end">
-                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-yellow-400 border border-yellow-100 rounded-md shadow-sm hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
+                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-yellow-500 border border-yellow-100 rounded-md shadow-sm hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
                 Cancel
                 </button>
                 <button type="submit" class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">

@@ -10,7 +10,7 @@ class LectureController extends Controller
     public function index()
     {
         $subjects = Subject::all();
-        $lectures = Lecture::all();
+        $lectures = Lecture::paginate(5);
         return view('admin.lectures.index', compact('lectures'));
     }
 

@@ -14,7 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <style>
+    {{-- <style>
        .myGallery .item {
         position: relative;
         overflow: hidden;
@@ -56,12 +56,12 @@
         .new-style{
         border: 1px solid; background-color: #fff;
         }
-    </style>
+    </style> --}}
 </head>
-<body class="h-screen font-sans antialiased leading-none bg-gray-100">
+<body class="h-screen font-sans antialiased leading-none bg-gray-200">
 
       <div id="app">
-        <div class="flex h-screen overflow-hidden bg-gray-100">
+        <div class="flex h-screen overflow-hidden bg-gray-200">
             <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
             <div class="fixed inset-0 z-40 flex lg:hidden" role="dialog" aria-modal="true">
               <!--

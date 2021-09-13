@@ -5,7 +5,7 @@
 @if(empty($course->id))
     <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/courses') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
+        <div class="space-y-8 divide-y divide-gray-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
 
@@ -16,7 +16,7 @@
     <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/courses/'.$course->id) }}" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
-        <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
+        <div class="space-y-8 divide-y divide-gray-500 sm:space-y-5">
             <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                 <div>
                         <h2 class="text-xl font-bold leading-8 text-gray-900">
@@ -66,7 +66,7 @@
 
         <div class="pt-5">
             <div class="flex justify-end">
-                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-yellow-400 border border-yellow-100 rounded-md shadow-sm hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
+                <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-yellow-500 border border-yellow-100 rounded-md shadow-sm hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
                 Cancel
                 </button>
                 <button type="submit" class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
