@@ -82,5 +82,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::resource('courses', CourseController::class);
     Route::resource('course-details', CourseDetailController::class);
     Route::resource('activity_titles', ActivityController::class);
+    Route::resource('testing',ActivityController::class);
 });
 

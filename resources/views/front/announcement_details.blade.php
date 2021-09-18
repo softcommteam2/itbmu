@@ -61,7 +61,7 @@
                   @endif
               <p class="new-detail-para">{{ $new->newseng }}</p><br>
             </div>
-            <h1 class="heading" align="center" id="gallery-heading">Photo Gallery</h1>
+            <h1 class="heading" align="center" id="gallery-heading">Photo Galleryyyyy</h1>
             <div class="myGallery">
                {{-- <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black"> --}}
               @if(!empty(unserialize($new->photo)))

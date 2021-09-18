@@ -17,8 +17,7 @@ class MediaController extends Controller
     public function new_details($id)
     {
        $new = News::findOrFail($id);
-
-        return view('front.announcement_details',compact('new'));
+        return view('front.news-detail',compact('new'));
     }
     public function magazine()
     {

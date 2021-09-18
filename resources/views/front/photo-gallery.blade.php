@@ -26,10 +26,20 @@
              
               @foreach ($galleries as $gallery)
                 @if(!empty(unserialize($gallery->photo)))
-                  @foreach (unserialize($gallery->photo) as $photo)
+                  {{-- @foreach (unserialize($gallery->photo) as $photo)
                     <div class="item">
                       <img src="{{asset('storage/gallery/images/'.$photo)}}" id="new-style"/>
-                      <span class="caption">{{$gallery->titleid}}</span>
+                      <span class="caption">{{$gallery->label}}</span>
+                    </div>
+                  @endforeach --}}
+                  @foreach (unserialize($gallery->photo) as $photo)
+                    <div class="gallery">
+                        <img src="{{asset('storage/gallery/images/'.$photo)}}"  alt="photo">
+                      <div class="desc">
+                        <a target="_blank" href="{{asset('storage/gallery/images/'.$photo)}}">
+                          View Detail
+                        </a>
+                      </div>
                     </div>
                   @endforeach
                 @else

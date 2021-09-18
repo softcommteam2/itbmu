@@ -76,7 +76,7 @@
                                         <div>
                                             <tr>
                                                 <td>
-                                                    @if(!empty($new->photo))
+                                                    {{-- @if(!empty($new->photo))
                                                         @if(!empty($new->pdf))
                                                             <div class="text-center">
                                                                 <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
@@ -90,7 +90,7 @@
                                                                 </a>
                                                             </div>
                                                         @endif
-                                                    @else
+                                                    @else --}}
                                                         @if(empty($new->pdf))
                                                             <div class="text-center">
                                                                 <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
@@ -105,7 +105,7 @@
                                                             </div>
                                                         @endif
                                                     
-                                                    @endif
+                                                    {{-- @endif --}}
                                                 </td>
                                                 <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $new->newstitleeng), 100) }}</td>
 
@@ -143,7 +143,20 @@
                                     <div>
                                         <tr>
                                             <td>
-                                                @if(!empty($ann->photo))
+                                                @if(empty($ann->pdf))
+                                                        <div class="text-center">
+                                                            <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
+                                                                <img class="default-img"  src="{{asset('images/itbmu-announcement.jpg')}}" >
+                                                            </a>
+                                                        </div>
+                                                @else
+                                                    <div class="text-center">
+                                                        <a href="{{asset('storage/news/'.$ann->pdf)}}" target="_Black">
+                                                            <img class="default-img"  src="{{asset('images/itbmu-announcement.jpg')}}" >
+                                                        </a>
+                                                    </div>
+                                                @endif
+                                                {{-- @if(!empty($ann->photo))
                                                     @if(!empty($ann->pdf))
                                                         <div class="text-center">
                                                             <a href="{{asset('storage/news/'.$ann->pdf)}}" target="_Black">
@@ -172,7 +185,7 @@
                                                         </div>
                                                     @endif
                                                 
-                                                @endif
+                                                @endif --}}
                                             </td>
                                             <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $ann->newstitleeng), 100) }}</td>
 

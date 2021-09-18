@@ -18,7 +18,8 @@ Licence URI: https://www.os-templates.com/template-terms
     <link href="{{ asset('layout/styles/style.css') }}" rel="stylesheet" type="text/css" media="all">
     <script src="https://kit.fontawesome.com/08bf8f3019.js" crossorigin="anonymous"></script>
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
-
+    
+    {{-- <script src="resources\views\front\ui-js\style.js" crossorigin="anonymous"></script> --}}
     <!-- Start WOWSlider.com HEAD section -->
     <link rel="stylesheet" type="text/css" href="{{ asset('engine1/style.css') }}" />
     <script type="text/javascript" src="{{ asset('engine1/jquery.js') }}"></script>
@@ -45,44 +46,38 @@ Licence URI: https://www.os-templates.com/template-terms
             text-align: justify;
             color:#000;
         }
-      .myGallery .item {
-        position: relative;
-        height: 300px;
-        overflow: hidden;
-        }
 
-        .myGallery .item img {
-        vertical-align: middle;
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 230px;
+            height:230px;
+           
         }
-
-        .myGallery .caption {
-        margin: 0;
-        padding: 1em;
-        position: absolute;
-        z-index: 1;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        max-height: 100%;
-        overflow: auto;
-        box-sizing: border-box;
-        transition: transform .5s;
-        transform: translateY(100%);
-        background: rgba(0, 0, 0, .7);
-        color: rgb(255, 255, 255);
+        
+        div.gallery:hover {
+            border: 1px solid #777;
+           
         }
-
-        .myGallery .item:hover .caption {
-        transform: translateY(0%);
+        
+        div.gallery img {
+            width: 100%;
+            height: 80%;
         }
-        .myGallery {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* div.gallery img:hover {
+          height:auto;
+        } */
+        
+        div.desc {
+            font-size: 12px;
+            padding: 15px;
+            text-align: left;
+           
         }
-
-        .myGallery img {
-        width: 100%;
+        div.desc a{
+            color:#fcba03;
+            text-decoration: underline;
         }
         .new-style, .new-detail-img{
         border: 1px solid; background-color: #fff;

@@ -28,7 +28,7 @@ class MultimediaController extends Controller
             'title' => 'required',
             'presentername' => 'nullable',
             'filetype' => 'required',
-            'file' =>'required|mimetypes:video/avi,video/mpeg,video/mp4'
+            'file' =>'required|mimetypes:video/avi,video/mpeg,video/mp4,audio/mpeg,mpga,mp3,wav'
         ]);
         $file_name =time().'.'.$request->file->getClientOriginalName();
         $request->file->storeAs('multimedia',$file_name);

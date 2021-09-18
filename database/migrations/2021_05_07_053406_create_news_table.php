@@ -21,7 +21,7 @@ class CreateNewsTable extends Migration
             $table->longText('newsmyan');
             $table->string('upcomedate');
             $table->string('type');
-            $table->string('photo')->nullable();
+            $table->longText('photo')->nullable();
             $table->string('pdf')->nullable();
             $table->timestamps();
         });
