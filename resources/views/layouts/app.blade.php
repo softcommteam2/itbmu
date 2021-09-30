@@ -14,7 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    {{-- <style>
+    <style>
        .myGallery .item {
         position: relative;
         overflow: hidden;
@@ -56,7 +56,7 @@
         .new-style{
         border: 1px solid; background-color: #fff;
         }
-    </style> --}}
+    </style>
 </head>
 <body class="h-screen font-sans antialiased leading-none bg-gray-200">
 

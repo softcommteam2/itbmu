@@ -11,7 +11,7 @@ class MainController extends Controller
 {
     public function home()
     {
-        $announcements = News::where('type', '0')->orderBy('upcomedate')->latest()->get();
+        $announcements = News::where('type', '0')->orderBy('upcomedate','DESC')->get();
         $news = News::where('type','1')->latest()->get();
         return view('front.layout.home',compact('announcements','news'));
     }

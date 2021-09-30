@@ -15,14 +15,14 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('newstitleeng');
-            $table->string('newstitlemyan');
-            $table->longText('newseng');
-            $table->longText('newsmyan');
+            $table->string('newtitle');
+            $table->longText('description');
             $table->string('upcomedate');
             $table->string('type');
             $table->longText('photo')->nullable();
+            $table->string('cover_photo')->nullable();
             $table->string('pdf')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

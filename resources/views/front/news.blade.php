@@ -16,17 +16,17 @@
               <tr>
               
                 <td rowspan="3" width="160px">
-                  @if(!empty($new->photo))
+                  @if(!empty($new->cover_photo))
                     @if(!empty($new->pdf))
                         <div class="text-center">
                             <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
-                                <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+                                <img class="default-img" src="{{asset('storage/news/'.$new->cover_photo)}}">
                             </a>
                         </div>
                     @else
                         <div class="text-center">
                             <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
-                                <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+                                <img class="default-img" src="{{asset('storage/news/'.$new->cover_photo)}}">
                             </a>
                         </div>
                     @endif
@@ -63,16 +63,15 @@
               
                   @endif
                 </td>
-                <td colspan="3"><strong>{{ $new->newstitleeng }}</strong></td>
+                <td colspan="3"><strong>{{ $new->newtitle }}</strong></td>
               </tr>
               <tr>
-                <td><strong>{{ Illuminate\Support\Str::limit(strip_tags( $new->newsmyan), 150) }} </strong></td>
-                <td><strong>၁၃၈၁-ခုနှစ် တပို့တွဲ-တပေါင်း </strong></td>
+                <td><strong>{{ Illuminate\Support\Str::limit(strip_tags( $new->description), 150) }} </strong></td>
                 <td><strong>{{ $new->upcomedate }}</strong></td>
               </tr>
               <tr>
 
-                <td colspan="3" align="right"> <p class="nospace"><a href="{{ url('event-detail/'.$new->id) }}" id="show-more"><strong>Read More &raquo;</strong></a></p></td>
+                <td colspan="3" align="right"> <p class="nospace"><a href="{{ url('event_detail/'.$new->id) }}" id="show-more"><strong>Read More &raquo;</strong></a></p></td>
               </tr>
            
           </tbody>

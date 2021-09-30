@@ -10,7 +10,7 @@ class MediaController extends Controller
 {
     public function news()
     {
-       $news = News::paginate(5);
+       $news = News::latest()->paginate(5);
     //    $currentPage = LengthAwarePaginator::resolveCurrentPage();
         return view('front.news',compact('news'));
     }

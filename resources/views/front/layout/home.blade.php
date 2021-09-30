@@ -66,7 +66,7 @@
             <div class="group btmspace-50 demo">
 
                 <div class="one_half first card">
-                    <div class="bg-card-header">News</div>
+                    <div class="bg-card-header" align="center">News</div>
                     <div class="p-0 card-body">
                         <div class="p-3 border-bottom scrollable">
                             <table>
@@ -76,21 +76,21 @@
                                         <div>
                                             <tr>
                                                 <td>
-                                                    {{-- @if(!empty($new->photo))
+                                                    @if(!empty($new->cover_photo))
                                                         @if(!empty($new->pdf))
                                                             <div class="text-center">
                                                                 <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
-                                                                    <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+                                                                    <img class="default-img" src="{{asset('storage/news/'.$new->cover_photo)}}">
                                                                 </a>
                                                             </div>
                                                         @else
                                                             <div class="text-center">
                                                                 <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
-                                                                    <img class="default-img" src="{{asset('storage/news/'.$new::first_photo($new->photo))}}">
+                                                                    <img class="default-img" src="{{asset('storage/news/'.$new->cover_photo)}}">
                                                                 </a>
                                                             </div>
                                                         @endif
-                                                    @else --}}
+                                                    @else
                                                         @if(empty($new->pdf))
                                                             <div class="text-center">
                                                                 <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
@@ -105,15 +105,15 @@
                                                             </div>
                                                         @endif
                                                     
-                                                    {{-- @endif --}}
+                                                    @endif
                                                 </td>
-                                                <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $new->newstitleeng), 100) }}</td>
+                                                <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $new->newtitle), 100) }}</td>
 
                                             </tr>
                                             <tr style="text-align: center;">
                                                 <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                                                <td class="secondary"><i class="far fa-calendar-alt"> 08/04/2021</i></td>
-                                                <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$new->id) }}" id="show-more">Show More </a></i></td>
+                                                <td class="secondary"><i class="far fa-calendar-alt"> {{$new->upcomedate}}</i></td>
+                                                <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event_detail/'.$new->id) }}" id="show-more">Show More </a></i></td>
 
                                             </tr>
                                         </div>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
                 <div class="one_half card">
-                    <div class="bg-card-header">Announcement</div>
+                    <div class="bg-card-header" align="center">Announcement</div>
                     <div class="p-0 card-body">
                         <div class="p-3 border-bottom">
                             <table>
@@ -143,7 +143,7 @@
                                     <div>
                                         <tr>
                                             <td>
-                                                @if(empty($ann->pdf))
+                                                {{-- @if(empty($ann->pdf))
                                                         <div class="text-center">
                                                             <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
                                                                 <img class="default-img"  src="{{asset('images/itbmu-announcement.jpg')}}" >
@@ -155,18 +155,18 @@
                                                             <img class="default-img"  src="{{asset('images/itbmu-announcement.jpg')}}" >
                                                         </a>
                                                     </div>
-                                                @endif
-                                                {{-- @if(!empty($ann->photo))
+                                                @endif --}}
+                                                @if(!empty($ann->cover_photo))
                                                     @if(!empty($ann->pdf))
                                                         <div class="text-center">
                                                             <a href="{{asset('storage/news/'.$ann->pdf)}}" target="_Black">
-                                                                <img class="default-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}">
+                                                                <img class="default-img" src="{{asset('storage/news/'.$ann->cover_photo)}}">
                                                             </a>
                                                         </div>
                                                     @else
                                                         <div class="text-center">
                                                             <a href="{{asset('images/theannouncement.pdf')}}" target="_Black">
-                                                                <img class="default-img" src="{{asset('storage/news/'.$ann::first_photo($ann->photo))}}">
+                                                                <img class="default-img" src="{{asset('storage/news/'.$ann->cover_photo)}}">
                                                             </a>
                                                         </div>
                                                     @endif
@@ -185,15 +185,15 @@
                                                         </div>
                                                     @endif
                                                 
-                                                @endif --}}
+                                                @endif
                                             </td>
-                                            <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $ann->newstitleeng), 100) }}</td>
+                                            <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $ann->newtitle), 100) }}</td>
 
                                         </tr>
                                         <tr style="text-align: center;">
                                             <td class="secondary"><i class="far fa-user"> Admin</i> </td>
-                                            <td class="secondary"><i class="far fa-calendar-alt"> 01/04/2021</i></td>
-                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$ann->id) }}" id="show-more">Show More </a></i></td>
+                                            <td class="secondary"><i class="far fa-calendar-alt"> {{$ann->upcomedate}}</i></td>
+                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event_detail/'.$ann->id) }}" id="show-more">Show More </a></i></td>
 
                                         </tr>
                                     </div>
@@ -226,4 +226,3 @@
 @endsection
 
 
-{{-- //အပြည်ပြည်ဆိုင်ရာ ထေရဝါဒ ဗုဒ္ဓသာသနာပြု တက္ကသိုလ်ဥပဒေ --}}
