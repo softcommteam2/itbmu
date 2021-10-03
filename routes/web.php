@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\{ActivityController, CourseController, CourseDetailController, GalleryController, HomeController, LectureController, MultimediaController, NewsController, OrganizationController, StudentsController, SubjectController};
+use App\Http\Controllers\{ActivityController, CourseController, CourseDetailController, GalleryController, HomeController, LectureController, MultimediaController, NewsController, OrganizationController, StudentsController, SubjectController, ResultController};
 use App\Http\Controllers\Front\{AboutController, AdmissionController, ExamResultController, FacilitiesController, MainController, MediaController};
 use PhpParser\Node\Stmt\Echo_;
 
@@ -82,6 +82,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::resource('courses', CourseController::class);
     Route::resource('course-details', CourseDetailController::class);
     Route::resource('activity_titles', ActivityController::class);
+    Route::resource('exam_results', ResultController::class);
     Route::resource('testing',ActivityController::class);
 });
 
