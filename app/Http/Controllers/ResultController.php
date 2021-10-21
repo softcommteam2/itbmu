@@ -9,7 +9,8 @@ class ResultController extends Controller
 
     public function index()
     {
-        return view('admin.exam-results.index');
+        $results = ExamResult::paginate(5);
+        return view('admin.exam-results.index',compact('results'));
     }
 
    
