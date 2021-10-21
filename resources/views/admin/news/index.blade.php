@@ -75,7 +75,7 @@
                                         @foreach (unserialize($new->photo) as $photo)
                                             <div class="item">
                                             <img src="{{asset('storage/news/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md"/>
-                                            {{-- <span class="caption">{{$new->label}}</span> --}}
+                                            
                                             </div>
                                         @endforeach
                                         @endif

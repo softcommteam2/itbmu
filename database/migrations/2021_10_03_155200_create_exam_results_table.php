@@ -18,6 +18,7 @@ class CreateExamResultsTable extends Migration
             $table->string('year');
             $table->string('date');
             $table->string('pdf');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
