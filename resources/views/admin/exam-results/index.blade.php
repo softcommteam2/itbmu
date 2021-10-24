@@ -41,7 +41,7 @@
                                     </td>
                                     
                                     <td class="px-6 py-4 text-sm text-center text-gray-900 whitespace-nowrap font-bold">
-                                        <a href="{{asset('storage/exam_results/'.$result->pdf)}}" target="_Black">pdf</a>
+                                        <a href="{{asset('storage/exam_results/'.$result->pdf)}}" target="_Black">{{ $result->pdf }}</a>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-center text-gray-900 whitespace-nowrap">
                                         <form action="{{url('admin/exam_results/'.$result->id)}}" method="POST">

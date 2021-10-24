@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 class ExamResult extends Model
 {
     use HasFactory,SoftDeletes;
-    protected $fillable=['year','date', 'pdf', 'deleted_at'];
+    protected $fillable=['year','date', 'pdf','exam_type', 'deleted_at'];
 }

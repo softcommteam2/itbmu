@@ -42,6 +42,20 @@
                         <input type="date" name="date" id="date" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-indigo-300 focus:border-indigo-300 sm:text-sm" value={{ old('date')?? $result->date }}>
                         </div>
                     </div>
+                    
+                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
+                      <label for="exam_type" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">Result Type</label>
+                      <select style="width:510px;" id="exam_type" name="exam_type" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option disabled selected value>Please Choose exam result type</option>
+                        <option value="E">Entrance</option>
+                        <option value="DC">Diploma Course</option>
+                        <option value="GDA">Graduate Degree Course(B.A(A))</option>
+                        <option value="GDB">Graduate Degree Course(B.A(B))</option>
+                        <option value="MAI">M.A Post Graduate Course(Part-I)</option>
+                        <option value="MAII">M.A Post Graduate Course(Part-II)</option>
+                        <option value="PA">P.A Post Graduate Course</option>
+                      </select>
+                    </div>
                    
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                         <label for="pdf" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">

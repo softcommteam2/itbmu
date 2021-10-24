@@ -27,6 +27,7 @@ class ResultController extends Controller
             'year' => 'required',
             'date' => 'required',
             'pdf'  => 'required',
+            'exam_type' => 'required',
             'deleted_at' => 'nullable'
         ]);
        if(!empty($request->file('pdf')))
@@ -59,6 +60,7 @@ class ResultController extends Controller
             'year' => 'required',
             'date' => 'required',
             'pdf'  => 'nullable',
+            'exam_type' => 'required',
             'deleted_at' => 'nullable'
         ]);
        if(!empty($request->file('pdf')))
