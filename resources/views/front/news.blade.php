@@ -12,9 +12,9 @@
               @foreach ($news as $new)
         <table>
           <tbody>
-           
+
               <tr>
-              
+
                 <td rowspan="3" width="160px">
                   @if(!empty($new->cover_photo))
                     @if(!empty($new->pdf))
@@ -60,7 +60,7 @@
                         </div>
                       @endif
                     @endif
-              
+
                   @endif
                 </td>
                 <td colspan="3"><strong>{{ $new->newtitle }}</strong></td>
@@ -71,9 +71,9 @@
               </tr>
               <tr>
 
-                <td colspan="3" align="right"> <p class="nospace"><a href="{{ url('event_detail/'.$new->id) }}" id="show-more"><strong>Read More &raquo;</strong></a></p></td>
+                <td colspan="3" align="right"> <p class="nospace"><a href="{{ url('event-detail/'.$new->id) }}" id="show-more"><strong>Read More &raquo;</strong></a></p></td>
               </tr>
-           
+
           </tbody>
         </table>
         @endforeach
@@ -82,7 +82,7 @@
 
       <!-- ################################################################################################ -->
       <nav class="pagination">
-        
+
         <ul>
           <li><a href="{{ $news->previousPageUrl()}}">&laquo; Previous</a></li>
           <li class="current"><strong>{{$news->currentPage()}}</strong></li>

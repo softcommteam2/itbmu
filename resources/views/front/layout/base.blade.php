@@ -18,7 +18,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <link href="{{ asset('layout/styles/style.css') }}" rel="stylesheet" type="text/css" media="all">
     <script src="https://kit.fontawesome.com/08bf8f3019.js" crossorigin="anonymous"></script>
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
-    
+
     {{-- <script src="resources\views\front\ui-js\style.js" crossorigin="anonymous"></script> --}}
     <!-- Start WOWSlider.com HEAD section -->
     <link rel="stylesheet" type="text/css" href="{{ asset('engine1/style.css') }}" />
@@ -41,7 +41,7 @@ Licence URI: https://www.os-templates.com/template-terms
             float: left;
             margin-right: 10px;
             }
-    
+
         .new-detail-para{
             text-align: justify;
             color:#000;
@@ -53,14 +53,14 @@ Licence URI: https://www.os-templates.com/template-terms
             float: left;
             width: 230px;
             height:230px;
-           
+
         }
-        
+
         div.gallery:hover {
             border: 1px solid #777;
-           
+
         }
-        
+
         div.gallery img {
             width: 100%;
             height: 80%;
@@ -68,12 +68,12 @@ Licence URI: https://www.os-templates.com/template-terms
         /* div.gallery img:hover {
           height:auto;
         } */
-        
+
         div.desc {
             font-size: 12px;
             padding: 15px;
             text-align: left;
-           
+
         }
         div.desc a{
             color:#fcba03;
@@ -89,7 +89,7 @@ Licence URI: https://www.os-templates.com/template-terms
         .reset{
             background-color: #fcba03;
         }
-       
+
         .primary, .reset{
             border: none;
             color: white;
@@ -229,7 +229,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <!-- ################################################################################################ -->
             <div id="logo" class="fl_left">
                 <h1>
-                    <a href="{{route('home')}}"><img src="images/adminlogonew1.png"></a>
+                    <a href="{{route('home')}}"><img src="{{asset('images/adminlogonew1.png')}}"></a>
                 </h1>
             </div>
 

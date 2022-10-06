@@ -104,7 +104,7 @@
                                                                 </a>
                                                             </div>
                                                         @endif
-                                                    
+
                                                     @endif
                                                 </td>
                                                 <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $new->newtitle), 100) }}</td>
@@ -113,7 +113,7 @@
                                             <tr style="text-align: center;">
                                                 <td class="secondary"><i class="far fa-user"> Admin</i> </td>
                                                 <td class="secondary"><i class="far fa-calendar-alt"> {{$new->upcomedate}}</i></td>
-                                                <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event_detail/'.$new->id) }}" id="show-more">Show More </a></i></td>
+                                                <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$new->id) }}" id="show-more">Show More </a></i></td>
 
                                             </tr>
                                         </div>
@@ -184,7 +184,7 @@
                                                             </a>
                                                         </div>
                                                     @endif
-                                                
+
                                                 @endif
                                             </td>
                                             <td colspan="3">{{ Illuminate\Support\Str::limit(strip_tags( $ann->newtitle), 100) }}</td>
@@ -193,7 +193,7 @@
                                         <tr style="text-align: center;">
                                             <td class="secondary"><i class="far fa-user"> Admin</i> </td>
                                             <td class="secondary"><i class="far fa-calendar-alt"> {{$ann->upcomedate}}</i></td>
-                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event_detail/'.$ann->id) }}" id="show-more">Show More </a></i></td>
+                                            <td class="secondary"><i class="fas fa-plus-circle"> <a href="{{ url('event-detail/'.$ann->id) }}" id="show-more">Show More </a></i></td>
 
                                         </tr>
                                     </div>

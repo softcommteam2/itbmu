@@ -4,9 +4,18 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\{ActivityController, CourseController, CourseDetailController, GalleryController, HomeController, LectureController, MultimediaController, NewsController, OrganizationController, StudentsController, SubjectController, ResultController};
 use App\Http\Controllers\Front\{AboutController, AdmissionController, ExamResultController, FacilitiesController, MainController, MediaController};
+use App\Http\Controllers\Auth\RegisterController;
 use PhpParser\Node\Stmt\Echo_;
 
-Auth::routes();
+// Auth::routes();
+
+Auth::routes(
+    [
+        'register' => false,
+    ]
+);
+
+
 
 //-------------------------About Tab---------------------------------------------//
 Route::get('/setups',[AboutController::class, 'setup'])->name('setup');
@@ -63,7 +72,9 @@ route::get('/feedback',[MainController::class, 'feedback'])->name('feedback');
 
 
 
-
+// Route::get('hah', function () {
+//     return view('front.news-detail');
+// });
 
 
 
@@ -84,5 +95,9 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
     Route::resource('activity_titles', ActivityController::class);
     Route::resource('exam_results', ResultController::class);
     Route::resource('testing',ActivityController::class);
+
+    Route::get('register', [RegisterController::class, 'showRegisterForm']);
+    Route::post('register', [RegisterController::class, 'register'])->name('register');
+
 });
 
