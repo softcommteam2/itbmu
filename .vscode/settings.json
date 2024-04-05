@@ -1,6 +1,5 @@
 {
-    "editor.lightbulb.enabled": false,
+    "editor.lightbulb.enabled": "off",
     "explorer.openEditors.visible": 0,
-    "workbench.activityBar.visible": true,
     "json.maxItemsComputed": 0
 }

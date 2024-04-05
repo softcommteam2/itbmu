@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Multimedia;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+
 class MultimediaController extends Controller
 {
 
     public function index()
     {
-        $medias= Multimedia::paginate(5);
+        $medias = Multimedia::paginate(5);
         return view('admin.multimedia.index', compact('medias'));
     }
 
@@ -24,15 +25,16 @@ class MultimediaController extends Controller
 
     public function store(Request $request)
     {
-        $data=$request->validate([
+        $data = $request->validate([
             'title' => 'required',
             'presentername' => 'nullable',
             'filetype' => 'required',
-            'file' =>'required|mimetypes:video/avi,video/mpeg,video/mp4,audio/mpeg,mpga,mp3,wav'
+            'file' => 'nullable|mimetypes:video/avi,video/mpeg,video/mp4,audio/mpeg,mpga,mp3,wav',
+            'link' => 'nullable',
         ]);
-        $file_name =time().'.'.$request->file->getClientOriginalName();
-        $request->file->storeAs('multimedia',$file_name);
-        $data['file']=$file_name;
+        $file_name = time() . '.' . $request->file->getClientOriginalName();
+        $request->file->storeAs('multimedia', $file_name);
+        $data['file'] = $file_name;
         Multimedia::create($data);
         return redirect('admin/multimedia');
     }
@@ -51,23 +53,23 @@ class MultimediaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $data=$request->validate([
+        $data = $request->validate([
             'title' => 'required',
             'presentername' => 'nullable',
             'filetype' => 'required',
-            'file' =>'nullable|mimetypes:video/avi,video/mpeg,video/mp4,video/mkv'
+            'file' => 'nullable|mimetypes:video/avi,video/mpeg,video/mp4,video/mkv',
+            'link' => 'nullable',
         ]);
-       
-        $media = Multimedia::findOrFail($id);
-        if($request->hasFile('file')){
-            File::delete($media->file);
-            $file_name =time().'.'.$request->file->getClientOriginalName();
-            $request->file->storeAs('multimedia',$file_name);
-            $data['file']=$file_name;
-            }
-            $media->update($data);
-        return redirect('admin/multimedia');
 
+        $media = Multimedia::findOrFail($id);
+        if ($request->hasFile('file')) {
+            File::delete($media->file);
+            $file_name = time() . '.' . $request->file->getClientOriginalName();
+            $request->file->storeAs('multimedia', $file_name);
+            $data['file'] = $file_name;
+        }
+        $media->update($data);
+        return redirect('admin/multimedia');
     }
     public function destroy($id)
     {

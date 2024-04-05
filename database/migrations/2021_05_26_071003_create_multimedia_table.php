@@ -18,7 +18,8 @@ class CreateMultimediaTable extends Migration
             $table->string('title');
             $table->string('presentername');
             $table->string('filetype');
-            $table->string('file');
+            $table->string('file')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }
