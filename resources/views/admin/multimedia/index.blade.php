@@ -70,8 +70,10 @@
                                                         class="font-medium text-gray-900">{{ $media->file }} </span></a>
                                             </td>
                                             <td class="px-6 py-4 text-sm text-left text-gray-500 whitespace-nowrap">
-                                                <span class="font-medium text-gray-900">{{ $media->link }}</span>
+                                                <a href="{{ $media->link }}" target="_blank"
+                                                    class="font-medium text-gray-900">{{ $media->link }}</a>
                                             </td>
+
 
 
 
