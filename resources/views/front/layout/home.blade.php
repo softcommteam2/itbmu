@@ -165,7 +165,7 @@
                             <div class="p-3 border-bottom">
                                 <table>
                                     <tbody>
-                                        @foreach ($announcements->take(5) as $ann)
+                                        @foreach ($announcements->sortByDesc('upcomedate')->take(5) as $ann)
                                             <div>
                                                 <tr>
                                                     <td>
