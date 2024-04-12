@@ -13,9 +13,14 @@
               @foreach ($medias::mp4() as $media)
              
             <div class="one_third first"> <p>
-                <video width="320" height="220" controls>
-                    <source src="{{asset('storage/multimedia/'.$media->file)}}" type="video/mp4">
-                </video>
+                @if($media->file) 
+                  <video width="320" height="220" controls>
+                      <source src="{{asset('storage/multimedia/'.$media->file)}}" type="video/mp4">
+                  </video>
+                @else 
+                  <a href="{{ $media->link }}" target="_blank"
+                    class="font-medium text-gray-900">{{ $media->link }}</a>
+                @endif
               </p>
               <p>
                 <table style="border: 0px solid;background-color: #fff;">

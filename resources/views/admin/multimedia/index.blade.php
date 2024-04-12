@@ -66,12 +66,20 @@
 
                                             </td>
                                             <td class="px-6 py-4 text-sm text-left text-gray-500 whitespace-nowrap">
+                                               @if($media->file)
                                                 <a href="{{ url('admin/multimedia/' . $media->id) }}"><span
-                                                        class="font-medium text-gray-900">{{ $media->file }} </span></a>
+                                                    class="font-medium text-gray-900">{{ $media->file }} </span></a>
+                                                @else
+                                                    <span style="color: red">Not Available</span>
+                                                @endif
                                             </td>
                                             <td class="px-6 py-4 text-sm text-left text-gray-500 whitespace-nowrap">
+                                                @if($media->link)
                                                 <a href="{{ $media->link }}" target="_blank"
                                                     class="font-medium text-gray-900">{{ $media->link }}</a>
+                                                @else
+                                                    <span style="color: red">Not Available</span>
+                                                @endif
                                             </td>
 
 
