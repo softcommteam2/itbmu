@@ -10,28 +10,16 @@
           <h1 align="center">Multimedia - Video(*.MP4) </h1>
     
           <div class="group btmspace-50 demo">
-              @foreach ($medias::mp4() as $media)
+              @foreach ($medias as $media)
              
-            <div class="one_third first"> 
-              {{-- <p>
-                  <a href="{{ $media->link }}" target="_blank"
-                    class="font-medium text-gray-900">{{ $media->link }}</a>
-              </p>
-              <p>
-                <table style="border: 0px solid;background-color: #fff;">
-                  <tr style="border: 0px solid;background-color: #fff;">
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-style:italic; font-weight:bold;" width="21%;">{{$media->title}}</td>
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-weight:bold;">{{date('d-m-y',strtotime($media->created_at))}}</td>
-                  </tr>
-                </table>
-              </p> --}}
+            <div> 
               <div class="row my-3">
                 <div class="col-md-4">
-                  <p class="fw-bold fst-italic" style="font-size: 16px">{{ $media->title }}</p>
+                  <p class="fw-bold fst-italic" style="font-size: 16px">Title - {{ $media->title }}</p>
                 </div>
                 <div class="col-md-4">
                   <p class="fw-bold">
-                    {{ date('d-m-y', strtotime($media->created_at)) }}
+                    Date - {{ date('d-m-y', strtotime($media->created_at)) }}
                   </p>
                 </div>
                 <div class="col-md-4">
@@ -49,34 +37,15 @@
               </div>
             </div>
             @endforeach
-            {{-- <div class="one_third"> <p>
-                <audio width="320px" height="220px" controls>
-                  <source src="#" type="audio/mpeg">
-                </audio>
-              </p>
-              <p>
-                <table style="border: 0px solid;background-color: #fff;">
-                  <tr style="border: 0px solid;background-color: #fff;">
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-style:italic; font-weight:bold;" width="21%;">Audio 1</td>
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-weight:bold;">04 May 2021</td>
-                  </tr>
-                </table>
-              </p></div>
-            <div class="one_third">  <p>
-                <audio width="320px" height="220px" controls>
-                  <source src="#" type="audio/mpeg">
-                </audio>
-              </p>
-              <p>
-                <table style="border: 0px solid;background-color: #fff;">
-                  <tr style="border: 0px solid;background-color: #fff;">
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-style:italic; font-weight:bold;" width="21%;">Audio 1</td>
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-weight:bold;">04 May 2021</td>
-                  </tr>
-                </table>
-              </p>
-            </div> --}}
           </div>
+           <!-- Pagination -->
+            <!-- Pagination -->
+            <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6" aria-label="Pagination">
+              <div class="flex justify-end"> <!-- Adjusted -->
+                  {{ $medias->links() }}
+              </div>
+          </nav>
+          
          
           
          
@@ -89,4 +58,45 @@
         <div class="clear"></div>
     </main>
 </div>
+<style>
+  /* CSS for pagination links */
+/* CSS for pagination links */
+  .pagination {
+      display: inline-block; /* Change to inline-block */
+      padding: 0;
+      margin: 0;
+  }
+
+  .pagination .page-link {
+      display: inline-block;
+      padding: 0.5rem 0.75rem;
+      margin-right: 0.25rem;
+      color: #333;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+  }
+
+  .pagination .page-link:hover {
+      background-color: #f0f0f0;
+      border-color: #ccc;
+  }
+
+  .pagination .page-item.active .page-link {
+      background-color: #007bff;
+      color: #fff;
+      border-color: #007bff;
+  }
+
+  .pagination .page-item.disabled .page-link {
+      pointer-events: none;
+      color: #868e96;
+      background-color: #fff;
+      border-color: #ddd;
+  }
+
+
+</style>
+
 @endsection

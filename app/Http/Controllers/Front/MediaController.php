@@ -26,12 +26,12 @@ class MediaController extends Controller
     }
     public function mediamp3()
     {
-        $medias = Multimedia::class;
+        $medias = Multimedia::mp3()->paginate(10);
         return view('front.mediamp3', compact('medias'));
     }
     public function mediamp4()
     {
-        $medias = Multimedia::class;
+        $medias = Multimedia::mp4()->paginate(10);
         return view('front.mediamp4', compact('medias'));
     }
 }
