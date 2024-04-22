@@ -100,30 +100,27 @@
                                 </tbody>
                             </table>
                             <!-- Pagination -->
-                            <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6"
-                                aria-label="Pagination">
+                            <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6" aria-label="Pagination">
                                 <div class="hidden sm:block">
                                     <p class="text-sm text-gray-700">
                                         Showing
-                                        <span class="font-medium">1</span>
+                                        <span class="font-medium">{{ $medias->firstItem() }}</span>
                                         to
-                                        <span class="font-medium">10</span>
+                                        <span class="font-medium">{{ $medias->lastItem() }}</span>
                                         of
-                                        <span class="font-medium">20</span>
+                                        <span class="font-medium">{{ $medias->total() }}</span>
                                         results
                                     </p>
                                 </div>
-                                <div class="flex justify-between flex-1 sm:justify-end">
-                                    <a href="#"
-                                        class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50">
-                                        Previous
-                                    </a>
-                                    <a href="#"
-                                        class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50">
-                                        Next
-                                    </a>
+                                <div class="flex items-center">
+                                    <div class="flex justify-between sm:justify-end">
+                                        {{ $medias->links() }}
+                                    </div>
                                 </div>
                             </nav>
+                            
+                            
+                                
                         </div>
                     </div>
                 </div>

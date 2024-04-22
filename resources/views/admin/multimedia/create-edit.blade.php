@@ -51,8 +51,8 @@
             <label for="filetype" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">File Type</label>
             <select style="width: 510px;" id="filetype" name="filetype" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 <option>Choose file type</option>
-                <option value="mp3">mp3</option>
-                <option value="mp4">mp4</option>
+                <option value="3">mp3</option>
+                <option value="4">mp4</option>
             </select>
         </div>
         
@@ -105,10 +105,10 @@
     <script>
         $(document).ready(function(){
             $('#filetype').change(function(){
-                if($(this).val() == 'mp3') {
+                if($(this).val() == '3') {
                     $('#fileInputSection').show();
                     $('#linkInputSection').hide();
-                } else if ($(this).val() == 'mp4') {
+                } else if ($(this).val() == '4') {
                     $('#fileInputSection').hide();
                     $('#linkInputSection').show();
                 } else {

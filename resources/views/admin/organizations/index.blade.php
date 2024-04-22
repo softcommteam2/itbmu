@@ -118,7 +118,7 @@
                   </tbody>
               </table>
               <!-- Pagination -->
-              <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6" aria-label="Pagination">
+              {{-- <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6" aria-label="Pagination">
                   <div class="hidden sm:block">
                   <p class="text-sm text-gray-700">
                       Showing
@@ -138,7 +138,25 @@
                       Next
                   </a>
                   </div>
-              </nav>
+              </nav> --}}
+              <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6" aria-label="Pagination">
+                <div class="hidden sm:block">
+                    <p class="text-sm text-gray-700">
+                        Showing
+                        <span class="font-medium">{{ $organizations->firstItem() }}</span>
+                        to
+                        <span class="font-medium">{{ $organizations->lastItem() }}</span>
+                        of
+                        <span class="font-medium">{{ $organizations->total() }}</span>
+                        results
+                    </p>
+                </div>
+                <div class="flex items-center">
+                    <div class="flex justify-between sm:justify-end">
+                        {{ $organizations->links() }}
+                    </div>
+                </div>
+            </nav>
               </div>
           </div>
           </div>
