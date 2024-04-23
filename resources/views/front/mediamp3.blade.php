@@ -10,7 +10,7 @@
                 <h1 align="center">Multimedia - Audio(*.MP3) </h1>
 
                 <div class="group btmspace-50 demo">
-                    @foreach ($medias::mp3() as $media)
+                    @foreach ($medias as $media)
                         <div class="one_third first">
                             <p>
                                 <audio width="320px" height="220px" controls>
@@ -30,34 +30,13 @@
                             </p>
                         </div>
                     @endforeach
-                    {{-- <div class="one_third"> <p>
-                <audio width="320px" height="220px" controls>
-                  <source src="#" type="audio/mpeg">
-                </audio>
-              </p>
-              <p>
-                <table style="border: 0px solid;background-color: #fff;">
-                  <tr style="border: 0px solid;background-color: #fff;">
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-style:italic; font-weight:bold;" width="21%;">Audio 1</td>
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-weight:bold;">04 May 2021</td>
-                  </tr>
-                </table>
-              </p></div>
-            <div class="one_third">  <p>
-                <audio width="320px" height="220px" controls>
-                  <source src="#" type="audio/mpeg">
-                </audio>
-              </p>
-              <p>
-                <table style="border: 0px solid;background-color: #fff;">
-                  <tr style="border: 0px solid;background-color: #fff;">
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-style:italic; font-weight:bold;" width="21%;">Audio 1</td>
-                    <td style="border: 0px solid;background-color: #fff; font-size:13px; font-weight:bold;">04 May 2021</td>
-                  </tr>
-                </table>
-              </p>
-            </div> --}}
                 </div>
+                 <!-- Pagination -->
+                <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6" aria-label="Pagination">
+                  <div class="flex justify-end"> <!-- Adjusted -->
+                      {{ $medias->links() }}
+                  </div>
+              </nav>
 
                 <!-- ################################################################################################ -->
             </div>
