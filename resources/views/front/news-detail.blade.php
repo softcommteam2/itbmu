@@ -11,7 +11,7 @@
                         <div class="text-center">
                             <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">
                                 {{-- @dd($new::first_photo($new->photo)) --}}
-                                <img class="default-img new-detail-img" src="{{asset('storage/news/'.$new->photo)}}" alt="lkkkk">
+                                <img class="default-img new-detail-img" src="{{asset('storage/news/'.$new->cover_photo)}}" alt="lkkkk">
                             </a>
                         </div>
                     @else

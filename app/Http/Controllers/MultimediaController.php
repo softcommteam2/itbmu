@@ -11,7 +11,7 @@ class MultimediaController extends Controller
 
     public function index()
     {
-        $medias = Multimedia::paginate(20);
+        $medias = Multimedia::paginate(10);
         return view('admin.multimedia.index', compact('medias'));
     }
 

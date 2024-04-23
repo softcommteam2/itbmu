@@ -14,11 +14,11 @@ class Multimedia extends Model
 
     public static function mp3()
     {
-        return Multimedia::where('filetype', '3')->get();
+        return Multimedia::where('filetype', '3');
     }
 
     public static function mp4()
     {
-        return Multimedia::where('filetype', '4')->get();
+        return Multimedia::where('filetype', '4');
     }
 }

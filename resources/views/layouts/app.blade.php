@@ -251,6 +251,46 @@
 
 
     </div>
+    
+<style>
+    /* CSS for pagination links */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination .page-link {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.25rem;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination .page-item.disabled .page-link {
+    pointer-events: none;
+    color: #868e96;
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+</style>
 
 
 </body>

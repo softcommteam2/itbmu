@@ -79,11 +79,29 @@
                     </tbody>
                 </table>
                 <!-- Pagination -->
-                <div class="flex justify-between flex-1 sm:justify-end">
+                {{-- <div class="flex justify-between flex-1 sm:justify-end">
                     <span class="bg-yellow-600 p-2 rounded m-2 text-gray-900">
                         {{ $lectures->links() }}
                     </span>
-                </div>
+                </div> --}}
+                <nav class="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200 sm:px-6" aria-label="Pagination">
+                    <div class="hidden sm:block">
+                        <p class="text-sm text-gray-700">
+                            Showing
+                            <span class="font-medium">{{ $lectures->firstItem() }}</span>
+                            to
+                            <span class="font-medium">{{ $lectures->lastItem() }}</span>
+                            of
+                            <span class="font-medium">{{ $lectures->total() }}</span>
+                            results
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex justify-between sm:justify-end">
+                            {{ $lectures->links() }}
+                        </div>
+                    </div>
+                </nav>
               </div>
           </div>
           </div>
