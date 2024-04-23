@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\{ActivityController, CourseController, CourseDetailController, GalleryController, HomeController, LectureController, MultimediaController, NewsController, OrganizationController, StudentsController, SubjectController, ResultController};
+use App\Http\Controllers\{ActivityController, CourseController, CourseDetailController, GalleryController, HomeController, LectureController, MultimediaController, NewsController, OrganizationController, StudentsController, SubjectController, ResultController, UserController};
 use App\Http\Controllers\Front\{AboutController, AdmissionController, ExamResultController, FacilitiesController, MainController, MediaController};
 use App\Http\Controllers\Auth\RegisterController;
 use PhpParser\Node\Stmt\Echo_;
@@ -60,6 +60,7 @@ Route::get('/ma-graduate', [ExamResultController::class, 'ma_graduate'])->name('
 Route::get('/pa-graduate', [ExamResultController::class, 'pa_graduate'])->name('pa-graduate');
 //-------------------------End Exam Result------------------------------------//
 
+
 //-------------------------Other Menu Tab-------------------------------------//
 Route::get('/',[MainController::class, 'home'])->name('home');
 Route::get('/home',[MainController::class, 'home'])->name('home');
@@ -98,6 +99,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
 
     Route::get('register', [RegisterController::class, 'showRegisterForm']);
     Route::post('register', [RegisterController::class, 'register'])->name('register');
+
+    
+//-------------------------User Create----------------------------------------//
+    Route::resource('/users', UserController::class);
+//-------------------------End User Create----------------------------------------//
 
 });
 
