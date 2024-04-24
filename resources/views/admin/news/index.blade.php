@@ -8,7 +8,7 @@
   <div class="mt-8">
     <div>
         <h2 class="m-8 text-xl font-bold leading-8 text-gray-900">
-           <u> News & Events List </u> <a href="{{ url('admin/news/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add New</a>
+           <u> News & Announcement List </u> <a href="{{ url('admin/news/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add New</a>
         </h2>
 
     </div>
@@ -69,20 +69,20 @@
                                     @endif
                                 </td>
                                 <td class="px-6 py-4 text-sm text-center text-gray-900 whitespace-nowrap w-1/4">
-                                
+
                                     <div class="myGallery">
                                         @if(!empty(unserialize($new->photo)))
                                         @foreach (unserialize($new->photo) as $photo)
                                             <div class="item">
                                             <img src="{{asset('storage/news/'.$photo)}}" class="object-center w-16 h-16 mx-auto rounded-md"/>
-                                            
+
                                             </div>
                                         @endforeach
                                         @endif
-                                    
+
                                     </div>
                                 </td>
-                                
+
                                 <td>
                                     <a href="{{asset('storage/news/'.$new->pdf)}}" target="_Black">pdf</a>
                                 </td>
@@ -103,7 +103,7 @@
                                                 <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                                             </svg>
                                         </a>
-                                        
+
                                         <button class="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -111,7 +111,7 @@
                                         </button>
                                         @endif
                                     </form>
-                                    
+
                                 </td>
                             </tr>
                         @endforeach
