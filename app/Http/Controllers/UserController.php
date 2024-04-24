@@ -106,7 +106,7 @@ class UserController extends Controller
         $user->save();
 
         // return redirect()->route('admin.user.edit', $user->id)->with('success', 'User updated successfully!');
-        return view('admin.users.edit');
+        return back();
     }
 
     /**
