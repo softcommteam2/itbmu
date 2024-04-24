@@ -59,13 +59,13 @@
                 class="absolute right-0 z-40 w-56 mt-2 -mr-1 origin-top-right rounded-md shadow-lg">
                   <div class="bg-white rounded-md shadow-xs">
                     <div class="py-1">
-                        <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 group" role="menuitem" tabindex="-1" id="menu-item-0">
+                        <a href="{{'users/'. Auth::user()->id. '/edit'}}" class="flex items-center px-4 py-2 text-sm text-gray-700 group" role="menuitem" tabindex="-1" id="menu-item-0">
                             <!-- Heroicon name: solid/pencil-alt -->
                             <svg class="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                                 <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                             </svg>
-                            Edit Profile
+                            Edit Profile 1
                             </a>
                       <div class="border-t border-gray-100">             </div>
 
