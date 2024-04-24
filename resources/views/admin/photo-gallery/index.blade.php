@@ -8,7 +8,7 @@
   <div class="mt-8">
     <div>
         <h2 class="m-8 text-xl font-bold leading-8 text-gray-900">
-           <u> Multimedia List </u> <a href="{{ url('admin/galleries/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add new</a>
+           <u> Photo Gallary List </u> <a href="{{ url('admin/galleries/create') }}" class="inline-flex justify-center float-right px-4 py-1 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300" >Add new</a>
         </h2>
 
     </div>
@@ -44,7 +44,7 @@
                             <td class="justify-center px-6 py-4 text-sm text-center text-gray-500 whitespace-nowrap">
                                 {{-- <img src="{{asset('gallery/images/'.$gallery->photo)}}" class="object-center w-16 h-16 mx-auto rounded-md"> --}}
                                 <div class="myGallery">
-                                  
+
                                     @if(!empty(unserialize($gallery->photo)))
                                       @foreach (unserialize($gallery->photo) as $photo)
                                         <div class="item">
@@ -54,7 +54,7 @@
                                     @else
                                       <img class="default-img"  src="{{asset('images/itbmu.jpg')}}" >
                                     @endif
-                                  
+
                                 </div>
                             </td>
 

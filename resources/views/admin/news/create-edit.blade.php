@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                      <label for="type" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">News & Event Type</label>
+                      <label for="type" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">News & Announcement Type</label>
                       <select style="width:510px;" id="type" name="type" class="block w-full py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option disabled selected value>Choose Type</option>
                         <option value="0">Announcements</option>
