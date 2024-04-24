@@ -27,7 +27,7 @@
                 <div class="p-3 space-y-6 border sm:space-y-5">
 
                      <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                        <label for="titleid" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">Title</label>
+                        <label for="titleid" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">Activity Title</label>
                         <select style="width:520px" id="titleid" name="titleid" class="block w-full max-w-lg py-2 pl-3 pr-10 mt-1 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                           <option>Choose Title</option>
                          @foreach ($act_titles as $act_title)
