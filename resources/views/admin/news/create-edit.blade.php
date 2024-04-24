@@ -10,7 +10,7 @@
                 <div>
 
                         <h2 class="text-xl font-bold leading-8 text-gray-900">
-                        <u> News & Events Entry Form </u>
+                        <u> News & Announcement Entry Form </u>
                         </h2>
                     @else
     <form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/news/'.$new->id) }}" method="POST" enctype="multipart/form-data">
@@ -42,7 +42,7 @@
                         </textarea>
                       </div>
                     </div>
-                    
+
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
                         <label for="upcomedate" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
                         Upcome Date
@@ -61,7 +61,7 @@
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                       <label for="cover_photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                          cover_photo 
+                          cover_photo
                       </label>
                       <div class="mt-1 sm:mt-0 sm:col-span-2">
                         <div class="flex justify-center max-w-lg px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
                         <label for="photo" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                            Photo 
+                            Photo
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                           <div class="flex justify-center max-w-lg px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
@@ -130,7 +130,7 @@
                             </div>
                           </div>
                         </div>
-                    </div> 
+                    </div>
 
                 </div>
             </div>
@@ -143,7 +143,7 @@
                   Cancel
                   </button>
               </a>
-                
+
                 <button type="submit" class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300">
                 Save
                 </button>
