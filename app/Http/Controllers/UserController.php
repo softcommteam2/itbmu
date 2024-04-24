@@ -93,7 +93,20 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+        // Check if a new password is provided
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->input('password'));
+        }
+
+        $user->save();
+
+        // return redirect()->route('admin.user.edit', $user->id)->with('success', 'User updated successfully!');
+        return view('admin.users.edit');
     }
 
     /**

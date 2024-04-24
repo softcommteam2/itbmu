@@ -3,7 +3,8 @@
 @section('content')
 
 
-<form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/users') }}" method="POST">
+<form class="relative px-8 pb-8 space-y-8 bg-gray-200 " action="{{ url('admin/users/'.$user[0]->id) }}" method="POST">
+    @method('PATCH')
     @csrf
     <div class="space-y-8 divide-y divide-blue-500 sm:space-y-5">
         <div class="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
@@ -15,29 +16,28 @@
             <div class="p-3 space-y-6 border sm:space-y-5">
                 <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
                     <label for="name" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                    Name
+                        Name
                     </label>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{$user[0]->name}}">
+                        <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{$user[0]->name}}">
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                    <label for="class" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                    Email
+                    <label for="email" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        Email
                     </label>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="email" id="email" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{$user[0]->email}}">
+                        <input type="email" name="email" id="email" autocomplete="email" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{$user[0]->email}}">
                     </div>
                 </div>
                 <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-                    <label for="class" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
-                    Password
+                    <label for="password" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2 text-right mr-8">
+                        New Password
                     </label>
                     <div class="mt-1 sm:mt-0 sm:col-span-2">
-                    <input type="text" name="password" id="password" autocomplete="given-name" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm" value="{{$user[0]->password}}">
+                        <input type="password" name="password" id="password" autocomplete="new-password" class="block w-full max-w-lg rounded-md shadow-sm focus:ring-yellow-300 focus:border-yellow-300 sm:text-sm">
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
