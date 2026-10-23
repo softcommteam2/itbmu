@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3019afc3299d5dc48c0262afe1c5297",
+    "content-hash": "e87d0703dfddf3c81c1a0028e7d7d7cc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5267,12 +5267,12 @@
             "version": "v5.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vlucas/phpdotenv.git",
+                "url": "https://github.com/phpdotenv/phpdotenv.git",
                 "reference": "2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4",
+                "url": "https://api.github.com/repos/phpdotenv/phpdotenv/zipball/2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4",
                 "reference": "2cf9fb6054c2bb1d59d1f3817706ecdb9d2934c4",
                 "shasum": ""
             },
@@ -7908,7 +7908,7 @@
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.3.0"
+        "php": "8.3.36"
     },
     "plugin-api-version": "2.6.0"
 }
