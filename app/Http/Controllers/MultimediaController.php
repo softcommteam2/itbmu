@@ -50,7 +50,7 @@ class MultimediaController extends Controller
         ]);
 
         if ($request->hasFile('file')) {
-            $file_name = time() . '.' . $request->file->getClientOriginalName();
+            $file_name = $this->safeFileName($request->file);
             $request->file->storeAs('multimedia', $file_name);
             $data['file'] = $file_name;
         } else {
@@ -95,7 +95,7 @@ class MultimediaController extends Controller
                 }
             }
 
-            $file_name = time() . '.' . $request->file->getClientOriginalName();
+            $file_name = $this->safeFileName($request->file);
             $request->file->move(public_path('multimedia'), $file_name);
             $data['file'] = $file_name;
         } elseif (!$request->file && !$media->file) {
