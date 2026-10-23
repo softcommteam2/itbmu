@@ -25,7 +25,7 @@ class OrganizationController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'photo' =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:20480',
+            'photo' =>  'required|image:allow_svg|mimes:jpeg,png,jpg,gif,svg|max:20480',
             'biography' => 'required',
             'rank' => 'required'
         ]);
