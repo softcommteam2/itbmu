@@ -26,13 +26,14 @@ class ResultController extends Controller
         $data = $request->validate([
             'year' => 'required',
             'date' => 'required',
-            'pdf'  => 'required',
+            'pdf'  => 'required|file|mimes:pdf,zip|max:102400',
             'exam_type' => 'required',
             'deleted_at' => 'nullable'
         ]);
+        unset($data['pdf']);
        if(!empty($request->file('pdf')))
        {
-           $pdf = time().'.'.$request->pdf->getClientOriginalName();
+           $pdf = $this->safeFileName($request->pdf);
            $request->pdf->storeAs('exam_results',$pdf);
            $data['pdf'] = $pdf;
        }
@@ -59,13 +60,14 @@ class ResultController extends Controller
         $data = $request->validate([
             'year' => 'required',
             'date' => 'required',
-            'pdf'  => 'nullable',
+            'pdf'  => 'nullable|file|mimes:pdf,zip|max:102400',
             'exam_type' => 'required',
             'deleted_at' => 'nullable'
         ]);
+        unset($data['pdf']);
        if(!empty($request->file('pdf')))
        {
-           $pdf = time().'.'.$request->pdf->getClientOriginalName();
+           $pdf = $this->safeFileName($request->pdf);
            $request->pdf->storeAs('exam_results',$pdf);
            $data['pdf'] = $pdf;
        }
