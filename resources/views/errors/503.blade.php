@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Under Maintenance | ITBMU</title>
-    {{-- Inline styles only: this page is shown while the site is down, so it must not depend on other assets --}}
+    {{-- Inline styles only: this page is shown while the site is down, so it must not depend on other assets.
+         Logo uses a root-relative path: --render builds this page from the CLI, where asset() would use APP_URL. --}}
     <style>
         * { box-sizing: border-box; }
         body {
@@ -38,7 +39,7 @@
 </head>
 <body>
     <div class="card">
-        <img class="logo" src="{{ asset('images/adminlogonew1.png') }}" alt="International Theravāda Buddhist Missionary University">
+        <img class="logo" src="/images/adminlogonew1.png" alt="International Theravāda Buddhist Missionary University">
 
         <h1>We'll be back soon</h1>
         <p>The website is currently undergoing scheduled maintenance.<br>Please check back again shortly.</p>
