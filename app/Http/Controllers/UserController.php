@@ -93,20 +93,31 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
+        // Users may only change their own account
+        abort_unless((int) $id === Auth::id(), 403);
+        $user = Auth::user();
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:users,email,'.$user->id,
+            'current_password' => 'required|current_password',
+            'password' => 'nullable|string|min:12|confirmed',
+        ]);
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-
-        // Check if a new password is provided
-        if ($request->filled('password')) {
-            $user->password = bcrypt($request->input('password'));
+        $passwordChanged = $request->filled('password');
+        if ($passwordChanged) {
+            $user->password = Hash::make($request->input('password'));
         }
-
         $user->save();
 
-        // return redirect()->route('admin.user.edit', $user->id)->with('success', 'User updated successfully!');
-        return back();
+        if ($passwordChanged) {
+            // Sign out every other session that used the old password
+            Auth::logoutOtherDevices($request->input('password'));
+        }
+
+        return back()->with('success', $passwordChanged ? 'Password changed. Other devices were logged out.' : 'Account updated.');
     }
 
     /**
