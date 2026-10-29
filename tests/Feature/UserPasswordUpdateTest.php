@@ -46,7 +46,7 @@ class UserPasswordUpdateTest extends TestCase
     {
         $me = $this->makeUser('me@test.local');
         $this->patchMe($me, ['current_password' => 'wrong', 'password' => 'new-password-456', 'password_confirmation' => 'new-password-456'])
-            ->assertSessionHasErrors('current_password');
+            ->assertSessionHasErrors(['current_password' => 'The current password is incorrect.']);
         $this->assertTrue($this->passwordIs($me, 'old-password-123'));
     }
 
