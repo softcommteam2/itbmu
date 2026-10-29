@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Multimedia;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class MultimediaController extends Controller
@@ -50,7 +50,7 @@ class MultimediaController extends Controller
         ]);
 
         if ($request->hasFile('file')) {
-            $file_name = time() . '.' . $request->file->getClientOriginalName();
+            $file_name = $this->safeFileName($request->file);
             $request->file->storeAs('multimedia', $file_name);
             $data['file'] = $file_name;
         } else {
@@ -88,15 +88,11 @@ class MultimediaController extends Controller
         if ($request->hasFile('file')) {
             // Delete old file if it exists
             if ($media->file) {
-                // Assuming files are stored in a folder named 'multimedia' in the public directory
-                $oldFilePath = public_path('multimedia/' . $media->file);
-                if (file_exists($oldFilePath)) {
-                    unlink($oldFilePath);
-                }
+                Storage::delete('multimedia/' . $media->file);
             }
 
-            $file_name = time() . '.' . $request->file->getClientOriginalName();
-            $request->file->move(public_path('multimedia'), $file_name);
+            $file_name = $this->safeFileName($request->file);
+            $request->file->storeAs('multimedia', $file_name);
             $data['file'] = $file_name;
         } elseif (!$request->file && !$media->file) {
             // If 'file' is not present in request and not already present in media object

@@ -28,13 +28,18 @@ class NewsController extends Controller
             'description' => 'required',
             'upcomedate' => 'required',
             'type' => 'required',
-            'deleted_at' =>'nullable'
+            'deleted_at' =>'nullable',
+            'photo' => 'nullable|array',
+            'photo.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:20480',
+            'cover_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
+            'pdf' => 'nullable|file|mimes:pdf,zip,doc,docx,xls,xlsx,ppt,pptx|max:102400',
         ]);
+        unset($data['photo'], $data['cover_photo'], $data['pdf']);
         $photos = [];
         if(!empty($request->file('photo'))){
             foreach($request->file('photo') as $photo)
             {
-                $file_name =time().'.'.$photo->getClientOriginalName();
+                $file_name = $this->safeFileName($photo);
                 array_push($photos,$file_name);
                 $photo->storeAs('news',$file_name);
                 // $data['photo']=serialize($file_name);
@@ -44,13 +49,13 @@ class NewsController extends Controller
         }
 
         if(!empty($request->file('cover_photo'))){
-            $cover_photo =time().'.'.$request->cover_photo->getClientOriginalName();
+            $cover_photo = $this->safeFileName($request->cover_photo);
             $request->cover_photo->storeAs('news',$cover_photo);
             $data['cover_photo']=$cover_photo;
             }
         
         if(!empty($request->file('pdf'))){
-        $pdf =time().'.'.$request->pdf->getClientOriginalName();
+        $pdf = $this->safeFileName($request->pdf);
         $request->pdf->storeAs('news',$pdf);
         $data['pdf']=$pdf;
         }
@@ -78,13 +83,18 @@ class NewsController extends Controller
             'description' => 'required',
             'upcomedate' => 'required',
             'type' => 'required',
-            'deleted_at' =>'nullable'
+            'deleted_at' =>'nullable',
+            'photo' => 'nullable|array',
+            'photo.*' => 'image|mimes:jpeg,png,jpg,gif,webp|max:20480',
+            'cover_photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:20480',
+            'pdf' => 'nullable|file|mimes:pdf,zip,doc,docx,xls,xlsx,ppt,pptx|max:102400',
         ]);
+        unset($data['photo'], $data['cover_photo'], $data['pdf']);
         $photos = [];
         if(!empty($request->file('photo'))){
             foreach($request->file('photo') as $photo)
             {
-                $file_name =time().'.'.$photo->getClientOriginalName();
+                $file_name = $this->safeFileName($photo);
                 array_push($photos,$file_name);
                 $photo->storeAs('news',$file_name);
                 // $data['photo']=serialize($file_name);
@@ -94,13 +104,13 @@ class NewsController extends Controller
         }
 
         if(!empty($request->file('cover_photo'))){
-            $cover_photo =time().'.'.$request->cover_photo->getClientOriginalName();
+            $cover_photo = $this->safeFileName($request->cover_photo);
             $request->cover_photo->storeAs('news',$cover_photo);
             $data['cover_photo']=$cover_photo;
             }
         
         if(!empty($request->file('pdf'))){
-        $pdf =time().'.'.$request->pdf->getClientOriginalName();
+        $pdf = $this->safeFileName($request->pdf);
         $request->pdf->storeAs('news',$pdf);
         $data['pdf']=$pdf;
         }
