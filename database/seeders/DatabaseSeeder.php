@@ -13,9 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         User::factory()->create([
-            'name' =>'admin',
-            'email'=>'admin@mail.com',
-        ]);
+        // Test account with the factory password "password": local only, never on production
+        if (app()->environment('local')) {
+            User::factory()->create([
+                'name' =>'admin',
+                'email'=>'admin@mail.com',
+            ]);
+        }
+
+        $this->call(SoftcommAdminSeeder::class);
     }
 }
